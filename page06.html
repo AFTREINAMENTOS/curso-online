@@ -46,7 +46,7 @@
             max-height: 110px;
         }
 
-        .wordwall-container {
+        .video-container {
             margin-top: 30px;
             display: flex;
             justify-content: center;
@@ -57,6 +57,9 @@
         iframe {
             border-radius: 12px;
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            height: 315px; /* Ajuste para vídeo responsivo */
+            max-width: 100%; /* Garante que o vídeo não ultrapasse a largura da tela */
         }
 
         .buttons {
@@ -101,8 +104,8 @@
 
         @media (max-width: 768px) {
             iframe {
-                width: 100%;
                 height: auto;
+                max-width: 100%;
             }
         }
 
@@ -128,9 +131,10 @@
     </header>
 
     <div class="container">
-        <!-- VIDEO YOUTUBE -->
-        <div class="wordwall-container">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/MT1ulBWRXnI?si=7_FTOKenqKlCUFTW&amp;start=6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <!-- Vídeo do YouTube -->
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/MT1ulBWRXnI?autoplay=1&start=6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
 
         <!-- Botões de Navegação -->
         <div class="buttons" id="buttons">
@@ -143,34 +147,6 @@
         <p>&copy; Plataforma - AF Treinamentos e Desenvolvimentos - 2025 - Todos os direitos reservados</p>
     </footer>
 
-    <script>
-        // Obtendo o iframe do Wordwall e os botões
-        const wordwallIframe = document.getElementById('wordwall');
-        const buttons = document.getElementById('buttons');
-        const advanceButton = document.querySelector('.btn-advance');
-
-        // Função para verificar se o Wordwall foi interagido
-        function checkWordwallCompletion() {
-            // Verifica se o Wordwall foi completado (isso depende de como o Wordwall gera eventos)
-            // Aqui estamos simulando que ao menos um 'click' foi registrado no Wordwall
-            // No caso real, seria necessário uma integração com a API do Wordwall para confirmar a interação.
-
-            // Exemplo simples (pode ser modificado de acordo com a implementação do Wordwall):
-            let completed = true; // Aqui você pode verificar se o Wordwall foi completado corretamente
-
-            if (completed) {
-                buttons.style.display = 'block'; // Exibe os botões de navegação
-                advanceButton.classList.add('active'); // Adiciona a classe 'active' ao botão avançar
-            }
-        }
-
-        // Simulando a interação com o Wordwall após o iframe ser carregado
-        wordwallIframe.onload = function() {
-            checkWordwallCompletion(); // Verifica se o Wordwall foi completado após o carregamento
-        };
-    </script>
-
 </body>
 
 </html>
-
