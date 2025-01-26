@@ -25,7 +25,7 @@
         header {
             background-color: #0066cc;
             color: white;
-            padding: 20px;
+            padding: 40px 20px; /* Aumentei o padding superior para criar espaço */
             width: 100%;
             text-align: center;
             position: relative;
@@ -48,12 +48,13 @@
             position: absolute;
             top: 20px;
             left: 20px;
-            max-height: 100px;
+            max-height: 80px; /* Ajustando o tamanho do logo */
+            width: auto;
         }
 
         /* Container para o vídeo */
         .video-container {
-            margin-top: 100px; /* Espaço para não sobrepor o logo */
+            margin-top: 120px; /* Aumentei o espaço para garantir que o vídeo não sobreponha o logotipo */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -122,8 +123,12 @@
                 font-size: 1rem;
             }
 
+            .logo {
+                max-height: 60px; /* Ajuste do tamanho do logo em telas menores */
+            }
+
             .video-container {
-                margin-top: 80px;
+                margin-top: 80px; /* Ajustando o espaço superior para o vídeo */
             }
 
             .buttons button {
@@ -132,6 +137,19 @@
             }
         }
 
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            .logo {
+                max-height: 50px; /* Ajustando ainda mais o tamanho do logo para telas pequenas */
+            }
+
+            .video-container {
+                margin-top: 60px; /* Ajustando ainda mais o espaço superior para o vídeo */
+            }
+        }
     </style>
 </head>
 
