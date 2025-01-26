@@ -1,1 +1,177 @@
-nnn
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AF Treinamentos</title>
+    <link href="#" rel="stylesheet"> <!-- Link para o seu arquivo de estilo (opcional) -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        header {
+            background-color: #0066cc;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            padding-top: 10px; /* Ajuste para dar espaço suficiente para o logo */
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-top: 20px;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-top: 10px;
+        }
+
+        header .logo {
+            position: absolute;
+            left: 20px;
+            top: 20px;
+            max-height: 110px;
+        }
+
+        .wordwall-container {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        iframe {
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .buttons {
+            display: none;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .buttons button {
+            background-color: #3498db;
+            color: white;
+            font-size: 1.2em;
+            padding: 12px 25px;
+            margin: 10px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .buttons button:hover {
+            background-color: #2980b9;
+            transform: scale(1.05);
+        }
+
+        .buttons button:active {
+            background-color: #1c6ea4;
+        }
+
+        .footer {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .footer p {
+            font-size: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        /* Logo com ajustes para não sobrepor conteúdo */
+        .logo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            max-height: 80px; /* Ajustando o tamanho do logo */
+            width: auto;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div>
+            <h1>AF Treinamentos</h1>
+            <p>Plataforma de Aprendizagem Interativa para Cuidados com Idosos</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Wordwall -->
+        <div class="wordwall-container">
+            <iframe id="wordwall" src="https://wordwall.net/embed/7bf44aae158847408e32e713d23f3ca4?themeId=1&templateId=5&fontStackId=0" width="500" height="380" frameborder="0" allowfullscreen></iframe>
+        </div>
+
+        <!-- Botões de Navegação -->
+        <div class="buttons" id="buttons">
+            <button class="btn" onclick="window.location.href=''">Voltar</button>
+            <button class="btn btn-advance" onclick="window.location.href='page07.html'">Avançar</button>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; Plataforma - AF Treinamentos e Desenvolvimentos - 2025 - Todos os direitos reservados</p>
+    </footer>
+
+    <script>
+        // Obtendo o iframe do Wordwall e os botões
+        const wordwallIframe = document.getElementById('wordwall');
+        const buttons = document.getElementById('buttons');
+        const advanceButton = document.querySelector('.btn-advance');
+
+        // Função para verificar se o Wordwall foi interagido
+        function checkWordwallCompletion() {
+            // Verifica se o Wordwall foi completado (isso depende de como o Wordwall gera eventos)
+            // Aqui estamos simulando que ao menos um 'click' foi registrado no Wordwall
+            // No caso real, seria necessário uma integração com a API do Wordwall para confirmar a interação.
+
+            // Exemplo simples (pode ser modificado de acordo com a implementação do Wordwall):
+            let completed = true; // Aqui você pode verificar se o Wordwall foi completado corretamente
+
+            if (completed) {
+                buttons.style.display = 'block'; // Exibe os botões de navegação
+                advanceButton.classList.add('active'); // Adiciona a classe 'active' ao botão avançar
+            }
+        }
+
+        // Simulando a interação com o Wordwall após o iframe ser carregado
+        wordwallIframe.onload = function() {
+            checkWordwallCompletion(); // Verifica se o Wordwall foi completado após o carregamento
+        };
+    </script>
+
+</body>
+
+</html>
+
