@@ -1,15 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <meta charset=utf-8>
+<head>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta charset=utf-8>
-    <meta name=viewport content="width=device-width,initial-scale=1">
-    <meta name=msapplication-TileColor content=#603cba>
-    <meta name=theme-color content=#ffffff>
-    <title>AF CURSOS ONLINE</title>
-    <link href="#" rel="stylesheet">
+    <meta name="msapplication-TileColor" content="#603cba">
+    <meta name="theme-color" content="#ffffff">
     <title>Curso: Aprendendo a Fazer Panoffee Tone com Panetone</title>
+    <link href="#" rel="stylesheet">
     <style>
         /* Reset básico para garantir consistência entre navegadores */
         * {
@@ -138,14 +136,65 @@
             .course-description {
                 flex-direction: column;
             }
+
+            .course-content, .recipe-section {
+                padding: 15px;
+            }
         }
+
+        .quiz-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 30px;
+        }
+
+        .question-container {
+            margin-bottom: 20px;
+        }
+
+        .question-container:last-child {
+            margin-bottom: 40px;
+        }
+
+        .quiz-container h3 {
+            font-size: 1.6rem;
+            color: #f39c12;
+            margin-bottom: 15px;
+        }
+
+        .options input {
+            margin-right: 10px;
+        }
+
+        .feedback {
+            margin-top: 20px;
+            font-size: 1.2rem;
+        }
+
+        .btn {
+            background-color: #f39c12;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 1rem;
+        }
+
+        .btn:disabled {
+            background-color: #bdc3c7;
+        }
+
     </style>
 </head>
 <body>
 
     <header>
         <h1> Curso: Aprenda a Fazer Panoffee com Panetone muito gostoso </h1>
-        <p>Descubra como criar um delicioso Banoffee usando Panetone, uma versão criativa e incrível do clássico Banoffee!</p>
+        <p>Descubra como criar um delicioso Panoffee usando Panetone, uma versão criativa e incrível do clássico Banoffee!</p>
     </header>
 
     <div class="container">
@@ -156,7 +205,6 @@
             </div>
 
             <img src="Panoffe.jpeg" alt="Imagem do Banoffee com Panetone">
-
         </section>
 
         <section class="course-content">
@@ -170,7 +218,7 @@
             </ul>
         </section>
 
-        <!-- Receita do Banoffee Tone com Panetone -->
+        <!-- Receita do Panoffee Tone com Panetone -->
         <section class="recipe-section">
             <h3>Receita: Panoffee com Panetone</h3>
 
@@ -199,13 +247,91 @@
                 </ol>
             </div>
         </section>
+
+        <!-- Avaliação do Curso -->
+        <section class="quiz-container">
+            <h3>Avaliação: Como foi o seu aprendizado?</h3>
+            <form id="quizForm">
+                <!-- Pergunta 1 -->
+                <div class="question-container">
+                    <label>Qual é a principal base utilizada na receita de Panoffee?</label>
+                    <div class="options">
+                        <input type="radio" name="question1" value="Panetone" id="opt1">
+                        <label for="opt1">Panetone</label>
+                    </div>
+                </div>
+
+                <!-- Pergunta 2 -->
+                <div class="question-container">
+                    <label>Que ingrediente é usado para fazer o doce de leite na receita?</label>
+                    <div class="options">
+                        <input type="radio" name="question2" value="Leite condensado" id="opt2">
+                        <label for="opt2">Leite condensado</label>
+                    </div>
+                </div>
+
+                <!-- Pergunta 3 -->
+                <div class="question-container">
+                    <label>Qual é o ingrediente principal para a cobertura do Panoffee?</label>
+                    <div class="options">
+                        <input type="radio" name="question3" value="Creme de leite" id="opt3">
+                        <label for="opt3">Creme de leite</label>
+                    </div>
+                </div>
+
+                <!-- Pergunta 4 -->
+                <div class="question-container">
+                    <label>Quantas horas o Panoffee deve ser refrigerado antes de servir?</label>
+                    <div class="options">
+                        <input type="radio" name="question4" value="2 horas" id="opt4">
+                        <label for="opt4">2 horas</label>
+                    </div>
+                </div>
+
+                <!-- Pergunta 5 -->
+                <div class="question-container">
+                    <label>O que pode ser usado para decorar o Panoffee?</label>
+                    <div class="options">
+                        <input type="radio" name="question5" value="Chocolate" id="opt5">
+                        <label for="opt5">Chocolate</label>
+                    </div>
+                </div>
+
+                <div class="feedback" id="feedback"></div>
+
+                <button type="button" class="btn" onclick="checkAnswers()">Enviar Respostas</button>
+            </form>
+        </section>
+
     </div>
 
-  
-
-    <footer class="footer">
+    <footer>
         <p>&copy; Plataforma - AF Treinamentos e Desenvolvimentos - 2025 - Todos os direitos reservados</p>
     </footer>
+
+    <script>
+        function checkAnswers() {
+            const feedback = document.getElementById("feedback");
+            const answers = [
+                { name: "question1", correct: "Panetone" },
+                { name: "question2", correct: "Leite condensado" },
+                { name: "question3", correct: "Creme de leite" },
+                { name: "question4", correct: "2 horas" },
+                { name: "question5", correct: "Chocolate" }
+            ];
+
+            let score = 0;
+            answers.forEach((question) => {
+                const selectedOption = document.querySelector(`input[name="${question.name}"]:checked`);
+                if (selectedOption && selectedOption.value === question.correct) {
+                    score++;
+                }
+            });
+
+            feedback.innerHTML = `Você acertou ${score} de 5 perguntas.`;
+            feedback.style.color = score === 5 ? "green" : "red";
+        }
+    </script>
 
 </body>
 </html>
