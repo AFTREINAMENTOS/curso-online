@@ -256,53 +256,73 @@
                 <div class="question-container">
                     <label>Qual é a principal base utilizada na receita de Panoffee?</label>
                     <div class="options">
-                        <input type="radio" name="question1" value="Panetone" id="opt1">
-                        <label for="opt1">Panetone</label>
+                        <input type="radio" name="question1" value="Panetone" id="q1opt1">
+                        <label for="q1opt1">Panetone</label><br>
+                        <input type="radio" name="question1" value="Biscoito" id="q1opt2">
+                        <label for="q1opt2">Biscoito</label><br>
+                        <input type="radio" name="question1" value="Pão" id="q1opt3">
+                        <label for="q1opt3">Pão</label>
                     </div>
                 </div>
 
                 <!-- Pergunta 2 -->
                 <div class="question-container">
-                    <label>Que ingrediente é usado para fazer o doce de leite na receita?</label>
+                    <label>O que é usado para preparar o doce de leite na receita?</label>
                     <div class="options">
-                        <input type="radio" name="question2" value="Leite condensado" id="opt2">
-                        <label for="opt2">Leite condensado</label>
+                        <input type="radio" name="question2" value="Leite condensado" id="q2opt1">
+                        <label for="q2opt1">Leite condensado</label><br>
+                        <input type="radio" name="question2" value="Leite" id="q2opt2">
+                        <label for="q2opt2">Leite</label><br>
+                        <input type="radio" name="question2" value="Açúcar" id="q2opt3">
+                        <label for="q2opt3">Açúcar</label>
                     </div>
                 </div>
 
                 <!-- Pergunta 3 -->
                 <div class="question-container">
-                    <label>Qual é o ingrediente principal para a cobertura do Panoffee?</label>
+                    <label>Quanto tempo deve deixar o Panoffee na geladeira antes de servir?</label>
                     <div class="options">
-                        <input type="radio" name="question3" value="Creme de leite" id="opt3">
-                        <label for="opt3">Creme de leite</label>
+                        <input type="radio" name="question3" value="1 hora" id="q3opt1">
+                        <label for="q3opt1">1 hora</label><br>
+                        <input type="radio" name="question3" value="2 horas" id="q3opt2">
+                        <label for="q3opt2">2 horas</label><br>
+                        <input type="radio" name="question3" value="3 horas" id="q3opt3">
+                        <label for="q3opt3">3 horas</label>
                     </div>
                 </div>
 
                 <!-- Pergunta 4 -->
                 <div class="question-container">
-                    <label>Quantas horas o Panoffee deve ser refrigerado antes de servir?</label>
+                    <label>Quais são os ingredientes opcionais para decorar o Panoffee?</label>
                     <div class="options">
-                        <input type="radio" name="question4" value="2 horas" id="opt4">
-                        <label for="opt4">2 horas</label>
+                        <input type="radio" name="question4" value="Nozes ou amendoim" id="q4opt1">
+                        <label for="q4opt1">Nozes ou amendoim</label><br>
+                        <input type="radio" name="question4" value="Frutas vermelhas" id="q4opt2">
+                        <label for="q4opt2">Frutas vermelhas</label><br>
+                        <input type="radio" name="question4" value="Coco ralado" id="q4opt3">
+                        <label for="q4opt3">Coco ralado</label>
                     </div>
                 </div>
 
                 <!-- Pergunta 5 -->
                 <div class="question-container">
-                    <label>O que pode ser usado para decorar o Panoffee?</label>
+                    <label>Qual é o principal sabor do Panoffee Tone?</label>
                     <div class="options">
-                        <input type="radio" name="question5" value="Chocolate" id="opt5">
-                        <label for="opt5">Chocolate</label>
+                        <input type="radio" name="question5" value="Banana" id="q5opt1">
+                        <label for="q5opt1">Banana</label><br>
+                        <input type="radio" name="question5" value="Chocolate" id="q5opt2">
+                        <label for="q5opt2">Chocolate</label><br>
+                        <input type="radio" name="question5" value="Manga" id="q5opt3">
+                        <label for="q5opt3">Manga</label>
                     </div>
                 </div>
 
-                <div class="feedback" id="feedback"></div>
-
-                <button type="button" class="btn" onclick="checkAnswers()">Enviar Respostas</button>
+                <!-- Botão de enviar -->
+                <button type="button" class="btn" id="submitQuiz" onclick="submitQuiz()">Enviar Respostas</button>
             </form>
-        </section>
 
+            <div id="feedback" class="feedback"></div>
+        </section>
     </div>
 
     <footer>
@@ -310,26 +330,26 @@
     </footer>
 
     <script>
-        function checkAnswers() {
-            const feedback = document.getElementById("feedback");
-            const answers = [
-                { name: "question1", correct: "Panetone" },
-                { name: "question2", correct: "Leite condensado" },
-                { name: "question3", correct: "Creme de leite" },
-                { name: "question4", correct: "2 horas" },
-                { name: "question5", correct: "Chocolate" }
-            ];
-
+        function submitQuiz() {
             let score = 0;
-            answers.forEach((question) => {
-                const selectedOption = document.querySelector(`input[name="${question.name}"]:checked`);
-                if (selectedOption && selectedOption.value === question.correct) {
-                    score++;
-                }
-            });
+            const feedbackElement = document.getElementById('feedback');
+            const quizForm = document.forms['quizForm'];
 
-            feedback.innerHTML = `Você acertou ${score} de 5 perguntas.`;
-            feedback.style.color = score === 5 ? "green" : "red";
+            // Pergunta 1
+            if (quizForm['question1'].value === 'Panetone') score++;
+            // Pergunta 2
+            if (quizForm['question2'].value === 'Leite condensado') score++;
+            // Pergunta 3
+            if (quizForm['question3'].value === '2 horas') score++;
+            // Pergunta 4
+            if (quizForm['question4'].value === 'Nozes ou amendoim') score++;
+            // Pergunta 5
+            if (quizForm['question5'].value === 'Banana') score++;
+
+            feedbackElement.innerHTML = `Você acertou ${score} de 5 perguntas.`;
+
+            // Desabilita o botão após enviar
+            document.getElementById('submitQuiz').disabled = true;
         }
     </script>
 
