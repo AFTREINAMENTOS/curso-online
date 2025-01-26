@@ -28,13 +28,46 @@
 
         header h1 {
             font-size: 2.5rem;
+            margin-top: 20px;
         }
 
         header .logo {
+            max-height: 80px;
+            margin: 0 auto;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .login-container {
             position: absolute;
-            left: 20px;
             top: 20px;
-            max-height: 110px;
+            right: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .login-container a {
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .login-container .user-image {
+            width: 40px;
+            height: 40px;
+            background-color: #fff;
+            border-radius: 50%;
+            border: 2px solid #0066cc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2rem;
+            color: #0066cc;
         }
 
         nav {
@@ -42,6 +75,7 @@
             justify-content: center;
             background-color: #005bb5;
             padding: 10px;
+            flex-wrap: wrap;
         }
 
         nav a {
@@ -74,6 +108,7 @@
             display: flex;
             flex-wrap: wrap;
             gap: 20px;
+            justify-content: center;
         }
 
         .course-card .card {
@@ -93,7 +128,7 @@
 
         .course-card .card img {
             max-width: 100%;
-            height: 200px;
+            height: auto;
             object-fit: cover;
             border-radius: 8px;
         }
@@ -121,40 +156,37 @@
             font-size: 1rem;
         }
 
-        .login-container {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .login-container a {
-            color: white;
-            font-size: 1.5rem;
-        }
-
-        .login-container .user-image {
-            width: 40px;
-            height: 40px;
-            background-color: #fff;
-            border-radius: 50%;
-            border: 2px solid #0066cc;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 1.2rem;
-            color: #0066cc;
-        }
-
         @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            header p {
+                font-size: 1rem;
+            }
+
             .course-card .card {
                 width: calc(50% - 20px);
+            }
+
+            nav {
+                flex-direction: column;
+            }
+
+            nav a {
+                margin: 10px 0;
             }
         }
 
         @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            header p {
+                font-size: 1rem;
+            }
+
             .course-card .card {
                 width: 100%;
             }
@@ -174,7 +206,7 @@
     <header>
         <!-- Logo da empresa -->
         <img src="Logotipo AF1.0.jpeg" alt="Logotipo da Empresa" class="logo">
-
+        
         <h1>AF Treinamentos e Desenvolvimentos</h1>
         <p>Aprenda de maneira eficiente com cursos interativos e materiais exclusivos.</p>
 
@@ -199,28 +231,25 @@
         <h2 class="section-title">Cursos Disponíveis</h2>
         <div class="course-card">
             <div class="card">
-                <img src="Capa.cuidadores.jpg" width="680" height="480" controls>
+                <img src="Capa.cuidadores.jpg" alt="Curso de cuidadores" width="680" height="480">
                 <h3>Curso de cuidadores de Idosos pelos Familiares</h3>
                 <p>Aprenda sobre as principais orientações de Cuidadores de Idosos em Casa</p>
                 <a href="page01.html">
                     <button>Acessar curso</button>
-                
+                </a>
             </div>
             <div class="card">
-                    <img src="Jaqueta.jpg" width="680" height="480" controls>
-                    <h3>Curso de Pilotagem de Motofretista</h3>
-                    <p>Aprenda a como ter uma condução segura sobre duas rodas.</p>
-                
+                <img src="Jaqueta.jpg" alt="Curso de Pilotagem de Motofretista" width="680" height="480">
+                <h3>Curso de Pilotagem de Motofretista</h3>
+                <p>Aprenda a como ter uma condução segura sobre duas rodas.</p>
                 <a href="page02.html">
                     <button>Acessar curso</button>
                 </a>
             </div>
             <div class="card">
-                
-                    <img src="Panoffe.jpeg" width="680" height="480" controls>
-                    <h3>Curso de Panoffe</h3>
-                    <p>Aprenda fazer Panonefe em casa</p>
-                
+                <img src="Panoffe.jpeg" alt="Curso de Panoffe" width="680" height="480">
+                <h3>Curso de Panoffe</h3>
+                <p>Aprenda fazer Panonefe em casa</p>
                 <a href="page03.html">
                     <button>Acessar curso</button>
                 </a>
@@ -234,5 +263,3 @@
 </body>
 
 </html>
-
-
