@@ -10,15 +10,15 @@
     <meta property="og:image" content="https://www.exemplo.com/imagens/Capa.cuidadores.jpg">
     <meta property="og:title" content="AF Treinamentos e Desenvolvimentos">
     <meta property="og:description" content="Aprenda de maneira eficiente com cursos interativos e materiais exclusivos.">
-    <meta property="og:image" content="Capa.cuidadores.jpg">
+    <meta property="og:image" content="Capa.cuidadores.jpg"> <!-- Caminho da imagem de preview -->
     <meta property="og:url" content="https://www.af-treinamentos.com">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="AF Treinamentos e Desenvolvimentos">
     <meta name="twitter:description" content="Aprenda de maneira eficiente com cursos interativos e materiais exclusivos.">
-    <meta name="twitter:image" content="CAPA.png">
+    <meta name="twitter:image" content="CAPA.png"> <!-- Caminho da imagem de preview -->
 
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https:.css" rel="stylesheet">
+
     <style>
         * {
             margin: 0;
@@ -38,12 +38,11 @@
             padding: 20px;
             text-align: center;
             position: relative;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         header h1 {
             font-size: 2.5rem;
-            margin-top: 10px;
+            margin-top: 20px;
         }
 
         header .logo {
@@ -65,32 +64,25 @@
             display: flex;
             align-items: center;
             gap: 10px;
+            z-index: 10; /* Garante que o login fique sobre o header */
         }
 
         .login-container a {
             color: white;
             font-size: 1.5rem;
-            transition: color 0.3s ease;
         }
 
-        .login-container a:hover {
-            color: #ffcc00;
-        }
-
-        .login-btn {
-            background-color: #ffcc00;
-            padding: 8px 16px;
-            border-radius: 25px;
-            font-size: 1rem;
+        .login-container .user-image {
+            width: 40px;
+            height: 40px;
+            background-color: #fff;
+            border-radius: 50%;
+            border: 2px solid #0066cc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2rem;
             color: #0066cc;
-            font-weight: bold;
-            text-decoration: none;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-
-        .login-btn:hover {
-            background-color: #005bb5;
-            color: white;
         }
 
         nav {
@@ -99,7 +91,6 @@
             background-color: #005bb5;
             padding: 10px;
             flex-wrap: wrap;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         nav a {
@@ -151,9 +142,9 @@
         }
 
         .course-card .card img {
-            max-width: 100%;
-            height: auto;
-            object-fit: cover;
+            width: 100%;
+            height: 200px; /* Definindo uma altura fixa para as imagens */
+            object-fit: cover; /* As imagens se ajustam ao espaço disponível */
             border-radius: 8px;
         }
 
@@ -228,19 +219,26 @@
 
 <body>
     <header>
-       
-        <h1>AF CURSOS ONLINE</h1>
+        <!-- Logo da empresa -->
+        <img src="Logotipo AF1.0.jpeg" alt="Logotipo da Empresa" class="logo">
+        
+        <h1>AF Treinamentos e Desenvolvimentos</h1>
         <p>Aprenda de maneira eficiente com cursos interativos e materiais exclusivos.</p>
 
+        <!-- Área de login ou imagem do usuário -->
         <div class="login-container">
-            <a href="Login.html" class="login-btn">Login</a>
+            <a href="#"><i class="fas fa-user"></i></a>
+            <!-- Representação do aluno após login -->
+            <div class="user-image">
+                A
+            </div>
         </div>
     </header>
 
     <nav>
-        <a href="#">Pagamentos</a>
-        <a href="#">Cursos gratuitos disponíveis</a>
-        <a href="#">Conheça nossa empresa</a>
+        <a href="#">Início</a>
+        <a href="#">Cursos</a>
+        <a href="#">Sobre</a>
         <a href="https://wa.me/5511951?text=Gostei%20da%20proposta%2C%20quero%20me%20inscrever%20no%20primeiro%20curso%20totalmente%20gratis.">Contato</a>
     </nav>
 
@@ -248,10 +246,10 @@
         <h2 class="section-title">Cursos Disponíveis</h2>
         <div class="course-card">
             <div class="card">
-                <img src="Capa.cuidadores.jpg" alt="Curso de cuidadores">
-                <h3>Curso de cuidadores de Idosos pelos Familiares</h3>
-                <p>Aprenda sobre as principais orientações de Cuidadores de Idosos em Casa</p>
-                <a href="page01.html">
+                <img src="Panoffe.jpeg" alt="Curso de Panoffe">
+                <h3>Curso de Panoffe</h3>
+                <p>Aprenda a fazer Panoffe em casa e surpreenda seus amigos e familiares.</p>
+                <a href="INDISPONIVEL.HTML">
                     <button>Acessar curso</button>
                 </a>
             </div>
@@ -262,128 +260,15 @@
                 <a href="INDISPONIVEL.HTML">
                     <button>Acessar curso</button>
                 </a>
-                <div class="card">
-                <img src="Panoffe.jpeg" alt="Curso de Panoffe">
-                <h3>Curso de Panoffe</h3>
-                <p>Aprenda fazer Panonefe em casa</p>
+            </div>
+            <div class="card">
+                <img src="papel-de-parede.jpg" alt="Curso de Colocação de Papel de Parede">
+                <h3>Curso de Colocação de Papel de Parede</h3>
+                <p>Aprenda a técnica correta para aplicar papel de parede e transformar ambientes de maneira rápida e prática.</p>
                 <a href="INDISPONIVEL.HTML">
                     <button>Acessar curso</button>
                 </a>
-                <div class="card">
-    <img src="papel-de-parede.jpg" alt="Curso de Colocação de Papel de Parede">
-    <h3>Curso de Colocação de Papel de Parede</h3>
-    <p>Aprenda a técnica correta para aplicar papel de parede e transformar ambientes de maneira rápida e prática.</p>
-    <a href="INDISPONIVEL.HTML">
-        <button>Acessar curso</button>
-    </a>
-</div>
-
-<div class="card">
-    <img src="confeitaria.jpg" alt="Curso de Confeitaria para Bolos de Aniversário">
-    <h3>Curso de Confeitaria para Bolos de Aniversário</h3>
-    <p>Aprenda a confeitar bolos com técnicas criativas e saborosas para qualquer ocasião especial.</p>
-    <a href="INDISPONIVEL.HTML">
-        <button>Acessar curso</button>
-    </a>
-</div>
-
-<div class="card">
-    <img src="limpeza-ar-condicionado.jpg" alt="Curso de Limpeza de Ar Condicionado">
-    <h3>Curso de Limpeza de Ar Condicionado</h3>
-    <p>Aprenda a realizar a manutenção e limpeza correta de sistemas de ar condicionado, garantindo seu bom funcionamento.</p>
-    <a href="INDISPONIVEL.HTML">
-        <button>Acessar curso</button>
-    </a>
-</div>
-
-<div class="card">
-    <img src="cuidados-acidentes-casa.jpg" alt="Curso de Cuidados para Evitar Acidentes em Casa">
-    <h3>Curso de Cuidados para Evitar Acidentes em Casa</h3>
-    <p>Aprenda medidas preventivas e práticas simples para garantir a segurança no ambiente doméstico e evitar acidentes.</p>
-    <a href="INDISPONIVEL.HTML">
-        <button>Acessar curso</button>
-    </a>
-</div>
-                <div class="card">
-    <img src="pintura-de-casas.jpg" alt="Curso de Pintura de Casas">
-    <h3>Curso de Pintura de Casas</h3>
-    <p>Aprenda as técnicas essenciais para pintar uma casa de maneira profissional, garantindo um acabamento de qualidade.</p>
-    <a href="INDISPONIVEL.HTML">
-        <button>Acessar curso</button>
-    </a>
-</div>
-
-<div class="card">
-    <img src="jardinagem.jpg" alt="Curso de Jardinagem e Paisagismo">
-    <h3>Curso de Jardinagem e Paisagismo</h3>
-    <p>Aprenda a cuidar do seu jardim e a planejar paisagismos criativos para valorizar seu espaço ao ar livre.</p>
-    <a href="INDISPONIVEL.HTML">
-        <button>Acessar curso</button>
-    </a>
-</div>
-
-<div class="card">
-    <img src="costura.jpg" alt="Curso de Costura para Iniciantes">
-    <h3>Curso de Costura para Iniciantes</h3>
-    <p>Aprenda desde o básico até técnicas avançadas de costura para criar suas próprias peças de roupas e acessórios.</p>
-    <a href="INDISPONIVEL.HTML">
-        <button>Acessar curso</button>
-    </a>
-</div>
-
-<div class="card">
-    <img src="automaquiagem.jpg" alt="Curso de Auto Maquiagem">
-    <h3>Curso de Auto Maquiagem</h3>
-    <p>Aprenda técnicas de maquiagem para realçar sua beleza de forma prática e rápida, com dicas de profissionais.</p>
-    <a href="INDISPONIVEL.HTML">
-        <button>Acessar curso</button>
-    </a>
-</div>
-
-<div class="card">
-    <img src="fotografia.jpg" alt="Curso de Fotografia Digital">
-    <h3>Curso de Fotografia Digital</h3>
-    <p>Aprenda os fundamentos da fotografia digital e como tirar fotos incríveis usando sua câmera ou smartphone.</p>
-    <a href="INDISPONIVEL.HTML">
-        <button>Acessar curso</button>
-    </a>
-</div>
-
-<div class="card">
-    <img src="corte-de-cabelo.jpg" alt="Curso de Corte de Cabelo Masculino e Feminino">
-    <h3>Curso de Corte de Cabelo Masculino e Feminino</h3>
-    <p>Aprenda técnicas de corte de cabelo para diferentes tipos de fios e estilos, tanto para homens quanto para mulheres.</p>
-    <a href="INDISPONIVEL.HTML">
-        <button>Acessar curso</button>
-    </a>
-</div>
-
-<div class="card">
-    <img src="espanhol.jpg" alt="Curso de Espanhol para Iniciantes">
-    <h3>Curso de Espanhol para Iniciantes</h3>
-    <p>Aprenda o básico do idioma espanhol de forma prática e divertida, ideal para quem está começando a estudar.</p>
-    <a href="INDISPONIVEL.HTML">
-        <button>Acessar curso</button>
-    </a>
-</div>
-
-<div class="card">
-    <img src="musculacao.jpg" alt="Curso de Musculação e Treinamento Funcional">
-    <h3>Curso de Musculação e Treinamento Funcional</h3>
-    <p>Aprenda a realizar treinos eficazes e a montar uma rotina de musculação para alcançar seus objetivos físicos.</p>
-    <a href="INDISPONIVEL.HTML">
-        <button>Acessar curso</button>
-    </a>
-</div>
-
-<div class="card">
-    <img src="gastronomia.jpg" alt="Curso de Gastronomia Básica">
-    <h3>Curso de Gastronomia Básica</h3>
-    <p>Aprenda o básico da cozinha, desde o preparo de receitas simples até técnicas para preparar pratos deliciosos.</p>
-    <a href="INDISPONIVEL.HTML">
-        <button>Acessar curso</button>
-    </a>
-</div>
+            </div>
         </div>
     </div>
 
