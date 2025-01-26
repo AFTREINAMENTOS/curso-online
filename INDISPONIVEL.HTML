@@ -21,6 +21,7 @@
             align-items: center;
             height: 100vh;
             margin: 0;
+            flex-direction: column;
         }
 
         .container {
@@ -33,14 +34,19 @@
             width: 500px;
         }
 
+        .logo {
+            max-width: 200px;
+            margin-bottom: 20px;
+        }
+
         h1 {
-            font-size: 2rem;
+            font-size: 2.5rem;
             color: #005bb5;
             margin-bottom: 20px;
         }
 
         p {
-            font-size: 1.1rem;
+            font-size: 1.3rem;
             color: #666;
             margin-bottom: 30px;
         }
@@ -50,7 +56,7 @@
             color: white;
             border: none;
             padding: 15px 30px;
-            font-size: 1rem;
+            font-size: 1.2rem;
             border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s ease;
@@ -67,11 +73,11 @@
             }
 
             h1 {
-                font-size: 1.6rem;
+                font-size: 2rem;
             }
 
             p {
-                font-size: 1rem;
+                font-size: 1.1rem;
             }
 
             .btn-voltar {
@@ -83,9 +89,13 @@
 </head>
 <body>
 
+    <!-- Logo da empresa -->
+    <img src="Logotipo AF1.0.jpeg" alt="Logotipo da Empresa" class="logo">
+
     <div class="container">
         <h1>Que pena!</h1>
-        <p>Estamos trabalhando com empenho para oferecer a melhor experiência para você. Em breve, este treinamento estará disponível. Enquanto isso, aproveite os outros cursos disponíveis ou entre em contato conosco para solicitar um orçamento personalizado de treinamento, atendendo às suas necessidades específicas.</p>
+        <p>Estamos trabalhando com empenho para oferecer a melhor experiência para você. Em breve, este treinamento estará disponível. Nossa equipe está dedicada a este projeto para garantir a qualidade que você merece.</p>
+        <p>Enquanto isso, aproveite os outros cursos disponíveis ou entre em contato conosco para solicitar um orçamento personalizado de treinamento, atendendo às suas necessidades específicas.</p>
         
         <button class="btn-voltar" onclick="window.location.href='index.html';">Voltar à Página Inicial</button>
     </div>
