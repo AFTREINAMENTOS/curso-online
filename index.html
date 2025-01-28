@@ -59,20 +59,6 @@
             color: #f4c542; /* Amarelo Claro/Dourado */
         }
 
-        /* Barra de Navegação Superior - CORREÇÃO */
-        .ui.large.secondary.menu {
-            background-color: #5e2a84 !important; /* Garantir fundo roxo */
-            color: white;
-        }
-
-        .ui.menu .item {
-            color: white !important;
-        }
-
-        .ui.menu .item:hover {
-            background-color: #f4c542; /* Amarelo Claro/Dourado */
-        }
-
         /* Responsividade */
         @media (max-width: 768px) {
             .ui.menu {
@@ -169,41 +155,32 @@
             }
         }
 
-       <!-- Hero Section -->
-<div class="hero-section">
-    <div class="hero-container">
-        <h2>Descubra os Melhores Cursos Online</h2>
-        <p>Aprenda com os melhores materiais e professores do mercado.</p>
-    </div>
-</div>
+        /* Estilo adicional */
+        .hero-section {
+            background-color: #f4c542; /* Amarelo Claro/Dourado */
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
 
-<style>
-    .hero-section {
-        background-color: #f4c542; /* Cor mais clara */
-        color: white;
-        padding: 80px 0;
-        text-align: center;
-    }
+        .hero-container {
+            max-width: 800px; /* Diminuir o tamanho do contêiner */
+            margin: 0 auto; /* Centraliza o contêiner */
+            padding: 0 20px;
+            background-color: #f7f7f7; /* Cor de fundo mais clara para o contêiner */
+            border-radius: 10px; /* Adiciona borda arredondada */
+        }
 
-    .hero-container {
-        max-width: 800px; /* Diminuir o tamanho do contêiner */
-        margin: 0 auto; /* Centraliza o contêiner */
-        padding: 0 20px;
-        background-color: #f7f7f7; /* Cor de fundo mais clara para o contêiner */
-        border-radius: 10px; /* Adiciona borda arredondada */
-    }
+        .hero-container h2 {
+            font-size: 2.5em; /* Tamanho do título ajustado */
+            margin-bottom: 20px;
+            color: #333; /* Cor mais escura para o título */
+        }
 
-    .hero-container h2 {
-        font-size: 2.5em; /* Tamanho do título ajustado */
-        margin-bottom: 20px;
-        color: #333; /* Cor mais escura para o título */
-    }
-
-    .hero-container p {
-        font-size: 1.2em;
-        color: #555; /* Cor mais escura para o texto */
-    }
-
+        .hero-container p {
+            font-size: 1.2em;
+            color: #555; /* Cor mais escura para o texto */
+        }
     </style>
 
     <!-- Favicon -->
@@ -247,8 +224,10 @@
 
             <!-- Hero Section -->
             <div class="hero-section">
-                <h2>Descubra os Melhores Cursos Online</h2>
-                <p>Aprenda com os melhores materiais e professores do mercado.</p>
+                <div class="hero-container">
+                    <h2>Descubra os Melhores Cursos Online</h2>
+                    <p>Aprenda com os melhores materiais e professores do mercado.</p>
+                </div>
             </div>
 
             <!-- Cursos Disponíveis -->
