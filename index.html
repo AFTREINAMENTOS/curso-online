@@ -10,12 +10,12 @@
 
     <style>
         body {
-            background-color: #f3f4f6;
+            background-color: #f7f7f7; /* Cinza Claro suave */
             font-family: 'Arial', sans-serif;
         }
 
         .header_breadcrumb {
-            background-color: #6a1b9a;
+            background-color: #5e2a84; /* Roxo suave */
             color: white;
             padding: 20px 0;
         }
@@ -25,7 +25,7 @@
         }
 
         .ui.menu {
-            background-color: #6a1b9a;
+            background-color: #5e2a84; /* Roxo suave */
         }
 
         .ui.menu .item {
@@ -33,16 +33,16 @@
         }
 
         .ui.menu .item:hover {
-            background-color: #8e24aa;
+            background-color: #f4c542; /* Amarelo Claro/Dourado */
         }
 
         .ui.button {
-            background-color: #8e24aa !important;
+            background-color: #f4c542 !important; /* Amarelo Claro/Dourado */
             color: white !important;
         }
 
         .footer {
-            background-color: #6a1b9a;
+            background-color: #5e2a84; /* Roxo suave */
             color: white;
             padding: 40px 0;
         }
@@ -56,7 +56,7 @@
         }
 
         .footer a:hover {
-            color: #8e24aa;
+            color: #f4c542; /* Amarelo Claro/Dourado */
         }
 
         /* Responsividade */
@@ -111,7 +111,7 @@
         }
 
         .hero-section {
-            background-color: #8e24aa;
+            background-color: #f4c542; /* Amarelo Claro/Dourado */
             color: white;
             padding: 100px 0;
             text-align: center;
@@ -125,18 +125,23 @@
         .courses-container {
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-between;
+            justify-content: space-around;
             margin-top: 30px;
         }
 
         .course-card {
             background-color: white;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             width: 250px;
             margin: 20px;
             padding: 20px;
             border-radius: 8px;
             text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .course-card:hover {
+            transform: translateY(-10px);
         }
 
         .course-card img {
@@ -147,27 +152,29 @@
         }
 
         .course-card h3 {
-            color: #6a1b9a;
+            color: #5e2a84; /* Roxo suave */
             font-size: 1.5em;
             margin-top: 10px;
         }
 
         .course-card p {
             color: #555;
+            font-size: 1em;
         }
 
         .course-card a {
             display: inline-block;
             margin-top: 15px;
-            background-color: #6a1b9a;
+            background-color: #5e2a84; /* Roxo suave */
             color: white;
             padding: 10px 20px;
             text-decoration: none;
             border-radius: 4px;
+            transition: background-color 0.3s ease;
         }
 
         .course-card a:hover {
-            background-color: #8e24aa;
+            background-color: #f4c542; /* Amarelo Claro/Dourado */
         }
     </style>
 
@@ -199,7 +206,7 @@
                     <div class="ui container">
                         <div class="item">
                             <a href="/" class="ui logo shape">
-                                <img src="Logotipo AF1.0.jpeg" class="ui image">
+                                <img src="#" class="ui image">
                             </a>
                         </div>
                         <div class="right menu">
@@ -242,8 +249,82 @@
                     <a href="INDISPONIVEL.HTML">Acessar curso</a>
                 </div>
 
-                <!-- Outros cursos aqui -->
+                <div class="course-card">
+                    <img src="Panoffe.jpeg" alt="Curso de Panoffee com Panetone">
+                    <h3>Curso de Panoffee feita com Panetone</h3>
+                    <p>Aprenda a fazer Panoffee com Panetone e surpreenda seus amigos e familiares.</p>
+                    <a href="Apreenda fazer Panoffee.html">Acessar curso</a>
+                </div>
 
+                <div class="course-card">
+                    <img src="Pintura de casa.png" alt="Curso de Pintura de Casas">
+                    <h3>Curso de Pintura de Casas</h3>
+                    <p>Aprenda as técnicas essenciais para pintar uma casa de maneira profissional, garantindo um acabamento de qualidade.</p>
+                    <a href="INDISPONIVEL.HTML">Acessar curso</a>
+                </div>
+
+                <div class="course-card">
+                    <img src="Jardinagem.jpg" alt="Curso de Jardinagem e Paisagismo">
+                    <h3>Curso de Jardinagem e Paisagismo</h3>
+                    <p>Aprenda a cuidar do seu jardim e a planejar paisagismos criativos para valorizar seu espaço ao ar livre.</p>
+                    <a href="INDISPONIVEL.HTML">Acessar curso</a>
+                </div>
+
+                <div class="course-card">
+                    <img src="Costura.jpg" alt="Curso de Costura para Iniciantes">
+                    <h3>Curso de Costura para Iniciantes</h3>
+                    <p>Aprenda desde o básico até técnicas avançadas de costura para criar suas próprias peças de roupas e acessórios.</p>
+                    <a href="INDISPONIVEL.HTML">Acessar curso</a>
+                </div>
+
+                <div class="course-card">
+                    <img src="Maquiagem.jpg" alt="Curso de Auto Maquiagem">
+                    <h3>Curso de Auto Maquiagem</h3>
+                    <p>Aprenda técnicas de maquiagem para realçar sua beleza de forma prática e rápida, com dicas de profissionais.</p>
+                    <a href="INDISPONIVEL.HTML">Acessar curso</a>
+                </div>
+
+                <div class="course-card">
+                    <img src="fotografia.jpg" alt="Curso de Fotografia Digital">
+                    <h3>Curso de Fotografia Digital</h3>
+                    <p>Aprenda os fundamentos da fotografia digital e como tirar fotos incríveis usando sua câmera ou smartphone.</p>
+                    <a href="INDISPONIVEL.HTML">Acessar curso</a>
+                </div>
+
+                <div class="course-card">
+                    <img src="corte-de-cabelo.jpg" alt="Curso de Corte de Cabelo Masculino e Feminino">
+                    <h3>Curso de Corte de Cabelo Masculino e Feminino</h3>
+                    <p>Aprenda técnicas de corte de cabelo para diferentes tipos de fios e estilos, tanto para homens quanto para mulheres.</p>
+                    <a href="INDISPONIVEL.HTML">Acessar curso</a>
+                </div>
+
+                <div class="course-card">
+                    <img src="Estudar.jpg" alt="Curso de Espanhol para Iniciantes">
+                    <h3>Curso de Espanhol para Iniciantes</h3>
+                    <p>Aprenda o básico do idioma espanhol de forma prática e divertida, ideal para quem está começando a estudar.</p>
+                    <a href="INDISPONIVEL.HTML">Acessar curso</a>
+                </div>
+
+                <div class="course-card">
+                    <img src="Gatronomia.jpg" alt="Curso de Gastronomia Básica">
+                    <h3>Curso de Gastronomia Básica</h3>
+                    <p>Aprenda o básico da cozinha, desde o preparo de receitas simples até técnicas para preparar pratos deliciosos.</p>
+                    <a href="INDISPONIVEL.HTML">Acessar curso</a>
+                </div>
+
+                <div class="course-card">
+                    <img src="Marketing digital.jpg" alt="Curso de Marketing Digital">
+                    <h3>Curso de Marketing Digital</h3>
+                    <p>Aprenda a promover negócios e aumentar a presença online com estratégias eficientes de marketing digital.</p>
+                    <a href="INDISPONIVEL.HTML">Acessar curso</a>
+                </div>
+
+                <div class="course-card">
+                    <img src="curso papel de parede.jpg" alt="Curso de Colocação de Papel de Parede">
+                    <h3>Curso de Colocação de Papel de Parede</h3>
+                    <p>Aprenda a técnica correta para aplicar papel de parede e transformar ambientes de maneira rápida e prática.</p>
+                    <a href="INDISPONIVEL.HTML">Acessar curso</a>
+                </div>
             </div>
 
             <footer class="footer">
