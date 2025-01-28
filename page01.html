@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AF Treinamentos</title>
-    <link href="#" rel="stylesheet"> <!-- Link para o seu arquivo de estilo (opcional) -->
+    <title>Orientações para Cuidadores de Idosos</title>
     <style>
-        /* Reset de margens e preenchimento */
         * {
             margin: 0;
             padding: 0;
@@ -16,20 +15,18 @@
         body {
             font-family: 'Roboto', sans-serif;
             background-color: #f4f4f9;
-            color: #333;
+            color: #fff;
+            line-height: 1.6;
             display: flex;
             flex-direction: column;
-            align-items: center;
+            min-height: 100vh;
         }
 
         header {
-            background-color: #0066cc;
+            background-color: #6a1b9a;
             color: white;
-            padding: 40px 20px; /* Aumentei o padding superior para criar espaço */
-            width: 100%;
             text-align: center;
-            position: relative;
-            box-sizing: border-box;
+            padding: 20px;
         }
 
         header h1 {
@@ -39,45 +36,53 @@
 
         header p {
             font-size: 1.1rem;
-            line-height: 1.6;
             margin-top: 10px;
         }
 
-        /* Logo com ajustes para não sobrepor conteúdo */
-        .logo {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            max-height: 80px; /* Ajustando o tamanho do logo */
-            width: auto;
+        .content-container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            color: #333;
+            flex: 1;
         }
 
-        /* Container para o vídeo */
+        h2 {
+            color: #6a1b9a;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        /* Estilo para o vídeo */
         .video-container {
-            margin-top: 120px; /* Aumentei o espaço para garantir que o vídeo não sobreponha o logotipo */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            padding: 20px;
+            text-align: center;
+            margin-bottom: 20px;
         }
 
         video {
-            border-radius: 12px;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-            max-width: 100%;
-            height: auto;
+            width: 100%;
+            max-width: 800px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
-        /* Botões de navegação */
+        /* Estilo para os botões */
         .buttons {
-            display: none;
-            margin-top: 20px;
-            text-align: center;
+            display: none; /* Escondido até o vídeo ser assistido */
+            justify-content: space-between;
+            margin-top: 30px;
         }
 
-        .buttons button {
-            background-color: #3498db;
+        .buttons .btn {
+            background-color: #6a1b9a;
             color: white;
             font-size: 1.2em;
             padding: 12px 25px;
@@ -89,65 +94,48 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
-        .buttons button:hover {
-            background-color: #2980b9;
+        .buttons .btn:hover {
+            background-color: #9c4dcc;
             transform: scale(1.05);
         }
 
-        .buttons button:active {
-            background-color: #1c6ea4;
+        .buttons .btn:active {
+            background-color: #8338a3;
         }
 
-        /* Estilo do rodapé */
+        .btn-advance {
+            opacity: 0.5;
+            pointer-events: none; /* Desativa o clique */
+        }
+
+        .btn-advance.active {
+            opacity: 1;
+            pointer-events: auto; /* Ativa o clique */
+        }
+
+        /* Rodapé */
         .footer {
-            background-color: #333;
+            background-color: #6a1b9a;
             color: white;
-            padding: 20px;
             text-align: center;
-            width: 100%;
-            position: absolute;
-            bottom: 0;
+            padding: 15px;
+            margin-top: auto;
         }
 
-        .footer p {
-            font-size: 1rem;
-        }
-
-        /* Responsividade para dispositivos móveis */
+        /* Responsividade */
         @media (max-width: 768px) {
-            header h1 {
-                font-size: 2rem;
-            }
-
-            header p {
+            body {
                 font-size: 1rem;
             }
 
-            .logo {
-                max-height: 60px; /* Ajuste do tamanho do logo em telas menores */
+            .content-container {
+                padding: 15px;
+                margin: 10px;
             }
 
-            .video-container {
-                margin-top: 80px; /* Ajustando o espaço superior para o vídeo */
-            }
-
-            .buttons button {
-                font-size: 1rem;
+            .buttons .btn {
+                font-size: 1em;
                 padding: 10px 20px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            header h1 {
-                font-size: 1.8rem;
-            }
-
-            .logo {
-                max-height: 50px; /* Ajustando ainda mais o tamanho do logo para telas pequenas */
-            }
-
-            .video-container {
-                margin-top: 60px; /* Ajustando ainda mais o espaço superior para o vídeo */
             }
         }
     </style>
@@ -156,25 +144,23 @@
 <body>
 
     <header>
-        <!-- Logo da empresa -->
-        <img src="Logotipo AF1.0.jpeg" alt="Logotipo da Empresa" class="logo">
-
-        <h1>AF Treinamentos e Desenvolvimentos</h1>
-        <p>Bem-vindo ao nosso portal de treinamentos. Acompanhe o vídeo abaixo e explore nossos conteúdos exclusivos.</p>
+        <h1>Entendendo o Papel do Cuidador de Idoso</h1>
+        <p>Orientações para cuidadores de idosos pela família</p>
     </header>
 
-    <div class="container">
-        <!-- Vídeo de Introdução -->
+    <div class="content-container">
+        <h2>Assista ao vídeo antes de avançar</h2>
+
         <div class="video-container">
-            <video id="videoElement" width="720" height="480" controls>
-                <source src="01 Introdução ao tema- Idoso.mp4" type="video/mp4">
-                Seu navegador não suporta o formato de vídeo.
+            <video id="videoElement" controls>
+                <source src="video.mp4" type="video/mp4">
+                Seu navegador não suporta vídeos.
             </video>
         </div>
 
-        <!-- Botões de Navegação -->
+        <!-- Botões de navegação (inicialmente ocultos) -->
         <div class="buttons" id="buttons">
-            <button class="btn" onclick="window.location.href='index.html'">Voltar</button>
+            <button class="btn" onclick="window.location.href='page01.html'">Voltar</button>
             <button class="btn btn-advance" onclick="window.location.href='page01.1.html'">Avançar</button>
         </div>
     </div>
@@ -191,13 +177,14 @@
 
         // Função para exibir os botões após o vídeo ser completamente assistido
         function onVideoEnd() {
-            buttons.style.display = 'block'; // Exibe os botões
-            advanceButton.classList.add('active'); // Adiciona a classe 'active' ao botão avançar
+            buttons.style.display = 'flex'; // Exibe os botões
+            advanceButton.classList.add('active'); // Ativa o botão avançar
         }
 
-        // Adicionando o evento 'ended' para saber quando o vídeo foi totalmente assistido
+        // Adicionando o evento 'ended' para detectar quando o vídeo termina
         video.addEventListener('ended', onVideoEnd);
     </script>
 
 </body>
+
 </html>
