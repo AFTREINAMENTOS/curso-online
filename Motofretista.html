@@ -54,21 +54,7 @@
             color: red;
             font-weight: bold;
         }
-        a {
-            color: #6a1b9a;
-            text-decoration: none;
-        }
-        a:hover {
-            color: #ffcc00;
-        }
         @media (max-width: 768px) {
-            body {
-                margin: 10px;
-                padding: 10px;
-            }
-            .container {
-                padding: 10px;
-            }
             .btn {
                 width: 100%;
             }
@@ -84,36 +70,28 @@
 
         <div class="content">
             <h2>1. Equipamentos de Segurança</h2>
-            <p>Para garantir sua segurança no trânsito, o uso correto de equipamentos é fundamental.</p>
-            <ul>
-                <li><strong>Capacete com viseira:</strong> Protege contra impactos e mantém a visibilidade.</li>
-                <li><strong>Jaqueta com proteção:</strong> Absorve impactos em caso de queda.</li>
-                <li><strong>Luvas reforçadas:</strong> Evitam lesões nas mãos e melhoram a aderência.</li>
-                <li><strong>Botas de segurança:</strong> Protegem os pés e tornozelos.</li>
-            </ul>
-            <p><strong>Exemplo:</strong> Se um objeto for lançado contra você na estrada, a viseira do capacete pode evitar um acidente grave.</p>
+            <p>O uso correto de equipamentos protege a vida do motofretista.</p>
         </div>
 
         <div class="content">
             <h2>2. Direção Defensiva</h2>
-            <p>Adotar uma postura defensiva reduz drasticamente os riscos de acidente.</p>
-            <ul>
-                <li>Antecipe ações dos motoristas ao seu redor.</li>
-                <li>Evite os pontos cegos dos carros.</li>
-                <li>Mantenha distância de segurança.</li>
-                <li>Seja visível, utilizando faróis acesos mesmo de dia.</li>
-            </ul>
-            <p><strong>Exemplo:</strong> Se um carro começa a mudar de faixa sem dar seta, reduza a velocidade e evite ultrapassá-lo.</p>
+            <p>Ser previsível e evitar riscos é essencial para evitar acidentes.</p>
         </div>
 
         <h2>Avaliação - Condução Segura</h2>
         <div class="quiz-container">
             <form id="quizForm1">
                 <div class="question">
-                    <p>1. Qual o equipamento mais importante para proteger a cabeça?</p>
-                    <input type="radio" name="q1" value="b"> (B) Capacete com viseira<br>
+                    <p>1. Qual o equipamento obrigatório para pilotagem segura?</p>
+                    <input type="radio" name="q1" value="a"> (A) Capacete com viseira<br>
+                    <input type="radio" name="q1" value="b"> (B) Luvas térmicas<br>
                 </div>
-                <button type="button" class="btn" onclick="verificarRespostas('quizForm1', 'resultado1', {'q1': 'b'})">Enviar</button>
+                <div class="question">
+                    <p>2. Qual a melhor forma de evitar acidentes?</p>
+                    <input type="radio" name="q2" value="a"> (A) Manter distância segura e prever ações dos outros motoristas<br>
+                    <input type="radio" name="q2" value="b"> (B) Andar sempre em alta velocidade<br>
+                </div>
+                <button type="button" class="btn" onclick="verificarRespostas('quizForm1', 'resultado1', {'q1': 'a', 'q2': 'a'})">Enviar</button>
             </form>
             <div id="resultado1"></div>
         </div>
@@ -122,36 +100,28 @@
 
         <div class="content">
             <h2>3. Revisão Diária da Moto</h2>
-            <p>Verificar sua moto antes de sair para o trabalho pode evitar falhas mecânicas inesperadas.</p>
-            <ul>
-                <li>Cheque os freios pisando no pedal e apertando o manete.</li>
-                <li>Veja se os pneus estão calibrados corretamente.</li>
-                <li>Observe se há vazamentos de óleo ou combustível.</li>
-                <li>Certifique-se de que as luzes e piscas estão funcionando.</li>
-            </ul>
-            <p><strong>Exemplo:</strong> Se perceber que o pneu está murcho antes de sair, pode evitar um estouro na pista.</p>
+            <p>Verifique pneus, freios, óleo e iluminação antes de sair para trabalhar.</p>
         </div>
 
         <div class="content">
             <h2>4. Manutenção Preventiva</h2>
-            <p>Manter a moto em boas condições aumenta sua vida útil e reduz custos com consertos.</p>
-            <ul>
-                <li><strong>Troque o óleo</strong> conforme recomendação do fabricante.</li>
-                <li><strong>Lubrifique a corrente</strong> a cada 500 km.</li>
-                <li><strong>Substitua os pneus</strong> quando estiverem gastos.</li>
-                <li><strong>Faça alinhamento</strong> e balanceamento regularmente.</li>
-            </ul>
-            <p><strong>Dica:</strong> Anote as datas das trocas de óleo e outras manutenções para manter um controle eficaz.</p>
+            <p>Evita falhas mecânicas e aumenta a vida útil da moto.</p>
         </div>
 
         <h2>Avaliação - Manutenção e Segurança</h2>
         <div class="quiz-container">
             <form id="quizForm2">
                 <div class="question">
-                    <p>1. Por que é importante calibrar os pneus?</p>
-                    <input type="radio" name="q6" value="b"> (B) Para garantir melhor aderência e evitar desgaste irregular<br>
+                    <p>1. Quando devemos calibrar os pneus?</p>
+                    <input type="radio" name="q3" value="a"> (A) Uma vez por semana ou conforme necessidade<br>
+                    <input type="radio" name="q3" value="b"> (B) Apenas quando perceber que está murcho<br>
                 </div>
-                <button type="button" class="btn" onclick="verificarRespostas('quizForm2', 'resultado2', {'q6': 'b'})">Enviar</button>
+                <div class="question">
+                    <p>2. Por que é importante trocar o óleo regularmente?</p>
+                    <input type="radio" name="q4" value="a"> (A) Para evitar danos ao motor e garantir desempenho<br>
+                    <input type="radio" name="q4" value="b"> (B) Apenas para deixar o motor mais bonito<br>
+                </div>
+                <button type="button" class="btn" onclick="verificarRespostas('quizForm2', 'resultado2', {'q3': 'a', 'q4': 'a'})">Enviar</button>
             </form>
             <div id="resultado2"></div>
         </div>
