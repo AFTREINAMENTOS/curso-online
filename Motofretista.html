@@ -22,7 +22,6 @@
         }
         .content {
             background: #f9f9f9;
-            color: #333;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
@@ -30,7 +29,6 @@
         }
         .quiz-container {
             background: #f9f9f9;
-            color: #333;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
@@ -82,93 +80,88 @@
     <div class="container">
         <h1>Curso de Condução Segura para Motofretistas</h1>
 
+        <h2>Parte 1: Condução Segura</h2>
         <div class="content">
             <h2>1. Equipamentos de Segurança</h2>
-            <p>O uso de capacete com viseira, jaqueta com proteção, luvas e botas reforçadas é essencial para a segurança do motofretista.</p>
+            <p>O uso correto de capacete, jaqueta com proteção, luvas e botas é essencial para a segurança do motofretista.</p>
         </div>
 
-        <div class="content">
-            <h2>2. Direção Defensiva</h2>
-            <p>Manter distância segura dos veículos, prever movimentos dos outros motoristas e respeitar as leis de trânsito são práticas fundamentais.</p>
-        </div>
-
-        <div class="content">
-            <h2>3. Condições Adversas</h2>
-            <p>Chuva, pista escorregadia e baixa visibilidade exigem maior atenção e redução da velocidade para evitar acidentes.</p>
-        </div>
-
-        <div class="content">
-            <h2>4. Revisão e Manutenção da Moto</h2>
-            <p>Verificar freios, pneus, óleo e iluminação regularmente garante que a moto esteja sempre em boas condições de uso.</p>
-        </div>
-
-        <div class="content">
-            <h2>5. Comportamento no Trânsito</h2>
-            <p>Evite ultrapassagens arriscadas, respeite os semáforos e tenha paciência no tráfego para evitar colisões e multas.</p>
-        </div>
-
-        <h2>Avaliação Final</h2>
-
+        <h2>Avaliação - Condução Segura</h2>
         <div class="quiz-container">
-            <form id="quizForm">
+            <form id="quizForm1">
                 <div class="question">
-                    <p>1. Qual é o equipamento obrigatório para motofretistas?</p>
-                    <input type="radio" name="q1" value="a"> (A) Boné e óculos escuros<br>
-                    <input type="radio" name="q1" value="b"> (B) Capacete com viseira e jaqueta com proteção<br>
-                    <input type="radio" name="q1" value="c"> (C) Somente luvas e botas<br>
+                    <p>1. Qual equipamento é obrigatório?</p>
+                    <input type="radio" name="q1" value="b"> (B) Capacete com viseira e jaqueta<br>
                 </div>
-
-                <div class="question">
-                    <p>2. O que é direção defensiva?</p>
-                    <input type="radio" name="q2" value="a"> (A) Acelerar sempre que possível<br>
-                    <input type="radio" name="q2" value="b"> (B) Antecipar riscos e evitar acidentes<br>
-                    <input type="radio" name="q2" value="c"> (C) Confiar que os outros motoristas sempre seguirão as regras<br>
-                </div>
-
-                <div class="question">
-                    <p>3. O que fazer ao pilotar na chuva?</p>
-                    <input type="radio" name="q3" value="a"> (A) Aumentar a velocidade para chegar mais rápido<br>
-                    <input type="radio" name="q3" value="b"> (B) Reduzir a velocidade e manter distância segura<br>
-                    <input type="radio" name="q3" value="c"> (C) Ultrapassar carros para evitar respingos<br>
-                </div>
-
-                <div class="question">
-                    <p>4. Qual item deve ser checado antes de sair para trabalhar?</p>
-                    <input type="radio" name="q4" value="a"> (A) Apenas o nível do combustível<br>
-                    <input type="radio" name="q4" value="b"> (B) Freios, pneus, iluminação e óleo<br>
-                    <input type="radio" name="q4" value="c"> (C) Somente a buzina<br>
-                </div>
-
-                <div class="question">
-                    <p>5. Como evitar colisões no trânsito?</p>
-                    <input type="radio" name="q5" value="a"> (A) Respeitar as regras e evitar ultrapassagens arriscadas<br>
-                    <input type="radio" name="q5" value="b"> (B) Ultrapassar sempre que houver espaço<br>
-                    <input type="radio" name="q5" value="c"> (C) Passar no sinal vermelho quando estiver com pressa<br>
-                </div>
-
-                <button type="button" class="btn" onclick="verificarRespostas()">Enviar Respostas</button>
+                <button type="button" class="btn" onclick="verificarRespostas('quizForm1', 'resultado1', {'q1': 'b'})">Enviar</button>
             </form>
+            <div id="resultado1"></div>
+        </div>
 
-            <div id="resultado"></div>
+        <h2>Parte 2: Manutenção e Segurança Mecânica</h2>
+        
+        <div class="content">
+            <h2>6. A Importância da Manutenção Preventiva</h2>
+            <p>Realizar revisões periódicas evita falhas inesperadas e aumenta a durabilidade da moto.</p>
+            <ul>
+                <li><strong>Troca de óleo:</strong> A cada 1.000 km ou conforme o manual do fabricante.</li>
+                <li><strong>Verificação dos pneus:</strong> Calibre regularmente e troque se estiverem carecas.</li>
+                <li><strong>Freios:</strong> Teste diariamente e substitua pastilhas gastas.</li>
+                <li><strong>Iluminação:</strong> Verifique faróis, piscas e lanterna traseira antes de sair.</li>
+            </ul>
+            <p><strong>Exemplo:</strong> Se o freio começar a ficar "borrachudo", pode ser ar no sistema ou pastilhas gastas. Leve a moto para manutenção imediatamente.</p>
+        </div>
+
+        <div class="content">
+            <h2>7. Segurança Mecânica no Dia a Dia</h2>
+            <p>Além das revisões, hábitos simples garantem mais segurança.</p>
+            <ul>
+                <li>Evite andar com tanque quase vazio para não danificar a bomba de combustível.</li>
+                <li>Não acelere bruscamente com a moto fria.</li>
+                <li>Use lubrificante na corrente a cada 500 km.</li>
+                <li>Cheque se há vazamentos de óleo ou líquido de arrefecimento.</li>
+            </ul>
+            <p><strong>Dica:</strong> Sempre tenha um kit básico de ferramentas e um spray reparador de pneus na moto.</p>
+        </div>
+
+        <h2>Avaliação - Manutenção e Segurança</h2>
+        <div class="quiz-container">
+            <form id="quizForm2">
+                <div class="question">
+                    <p>1. Quando trocar o óleo do motor?</p>
+                    <input type="radio" name="q6" value="a"> (A) Apenas quando o motor apresentar problemas<br>
+                    <input type="radio" name="q6" value="b"> (B) A cada 1.000 km ou conforme o manual do fabricante<br>
+                </div>
+                <div class="question">
+                    <p>2. Qual é a importância de calibrar os pneus?</p>
+                    <input type="radio" name="q7" value="a"> (A) Apenas para economizar gasolina<br>
+                    <input type="radio" name="q7" value="b"> (B) Para garantir melhor aderência e evitar desgaste irregular<br>
+                </div>
+                <button type="button" class="btn" onclick="verificarRespostas('quizForm2', 'resultado2', {'q6': 'b', 'q7': 'b'})">Enviar</button>
+            </form>
+            <div id="resultado2"></div>
         </div>
     </div>
 
     <script>
-        function verificarRespostas() {
-            var respostasCorretas = {q1: "b", q2: "b", q3: "b", q4: "b", q5: "a"};
+        function verificarRespostas(formId, resultadoId, respostasCorretas) {
             var pontuacao = 0;
             var resultadoHtml = "<h3>Resultado:</h3>";
 
-            for (var i = 1; i <= 5; i++) {
-                var respostaUsuario = document.querySelector('input[name="q' + i + '"]:checked');
+            for (var questao in respostasCorretas) {
+                var respostaUsuario = document.querySelector(`input[name="${questao}"]:checked`);
                 if (respostaUsuario) {
-                    resultadoHtml += `<p class='${respostaUsuario.value === respostasCorretas["q" + i] ? "correct" : "incorrect"}'>Questão ${i}: ${respostaUsuario.value === respostasCorretas["q" + i] ? "Correta ✅" : "Incorreta ❌"}</p>`;
-                    if (respostaUsuario.value === respostasCorretas["q" + i]) pontuacao++;
+                    if (respostaUsuario.value === respostasCorretas[questao]) {
+                        resultadoHtml += `<p class='correct'>${questao}: Correta ✅</p>`;
+                        pontuacao++;
+                    } else {
+                        resultadoHtml += `<p class='incorrect'>${questao}: Incorreta ❌</p>`;
+                    }
                 }
             }
 
-            resultadoHtml += `<h3>Sua pontuação: ${pontuacao}/5</h3>`;
-            document.getElementById("resultado").innerHTML = resultadoHtml;
+            resultadoHtml += `<h3>Sua pontuação: ${pontuacao}/${Object.keys(respostasCorretas).length}</h3>`;
+            document.getElementById(resultadoId).innerHTML = resultadoHtml;
         }
     </script>
 
