@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de Condução Segura para Motofretistas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+        .header h1 {
+            margin: 0;
+        }
+        .content {
+            padding: 20px;
+            margin: 20px auto;
+            background-color: white;
+            border-radius: 8px;
+            max-width: 900px;
+            display: none;
+        }
+        .content.active {
+            display: block;
+        }
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .nav-buttons button {
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .nav-buttons button:disabled {
+            background-color: #ccc;
+        }
+        .quiz {
+            margin-top: 20px;
+        }
+        .quiz div {
+            margin-bottom: 10px;
+        }
+        .feedback {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Curso de Condução Segura para Motofretistas</h1>
+    </div>
+
+    <!-- Conteúdo do Curso (Exemplo com última página) -->
+    <div class="content active" id="page-6">
+        <h2>6. Zelando pela Carga Transportada</h2>
+        <p>Texto sobre a carga transportada...</p>
+    </div>
+
+    <!-- Avaliação Final -->
+    <div class="content" id="quiz-page">
+        <h2>Avaliação Final</h2>
+        <p>Responda as perguntas abaixo e veja seu resultado.</p>
+
+        <div class="quiz">
+            <div>
+                <p>1. Qual é o equipamento de segurança obrigatório?</p>
+                <input type="radio" name="q1" value="errado"> Luvas<br>
+                <input type="radio" name="q1" value="correto"> Capacete<br>
+                <input type="radio" name="q1" value="errado"> Jaqueta<br>
+                <p class="feedback" id="feedback-q1"></p>
+            </div>
+
+            <div>
+                <p>2. Qual a distância mínima de segurança recomendada no trânsito?</p>
+                <input type="radio" name="q2" value="errado"> 1 segundo<br>
+                <input type="radio" name="q2" value="correto"> 2 segundos<br>
+                <input type="radio" name="q2" value="errado"> 3 segundos<br>
+                <p class="feedback" id="feedback-q2"></p>
+            </div>
+
+            <div>
+                <p>3. Por que manter os faróis acesos durante o dia?</p>
+                <input type="radio" name="q3" value="errado"> Para economizar bateria<br>
+                <input type="radio" name="q3" value="correto"> Para ser mais visível no trânsito<br>
+                <input type="radio" name="q3" value="errado"> Para iluminar melhor a estrada<br>
+                <p class="feedback" id="feedback-q3"></p>
+            </div>
+
+            <div>
+                <p>4. Qual o principal objetivo da manutenção preventiva?</p>
+                <input type="radio" name="q4" value="errado"> Tornar a moto mais veloz<br>
+                <input type="radio" name="q4" value="correto"> Prevenir falhas mecânicas<br>
+                <input type="radio" name="q4" value="errado"> Gastar menos com combustível<br>
+                <p class="feedback" id="feedback-q4"></p>
+            </div>
+
+            <div>
+                <p>5. Quando trocar os pneus da moto?</p>
+                <input type="radio" name="q5" value="correto"> Quando o sulco atingir o mínimo recomendado<br>
+                <input type="radio" name="q5" value="errado"> Somente quando estourarem<br>
+                <input type="radio" name="q5" value="errado"> Após 50.000 km rodados<br>
+                <p class="feedback" id="feedback-q5"></p>
+            </div>
+        </div>
+
+        <button onclick="verificarRespostas()">Finalizar Avaliação</button>
+        <p id="resultado"></p>
+    </div>
+
+    <div class="nav-buttons">
+        <button id="prev-btn" onclick="changePage(-1)" disabled>Voltar</button>
+        <button id="next-btn" onclick="changePage(1)">Avançar</button>
+    </div>
+
+    <script>
+        let currentPage = 6;
+        const totalPages = 7; // Inclui a avaliação
+
+        function changePage(direction) {
+            document.getElementById(`page-${currentPage}`)?.classList.remove('active');
+            document.getElementById('quiz-page')?.classList.remove('active');
+
+            currentPage += direction;
+            if (currentPage === 7) {
+                document.getElementById('quiz-page').classList.add('active');
+            } else {
+                document.getElementById(`page-${currentPage}`)?.classList.add('active');
+            }
+
+            document.getElementById('prev-btn').disabled = currentPage === 1;
+            document.getElementById('next-btn').disabled = currentPage === totalPages;
+        }
+
+        function verificarRespostas() {
+            let totalCorreto = 0;
+
+            for (let i = 1; i <= 5; i++) {
+                let respostas = document.getElementsByName(`q${i}`);
+                let correto = false;
+
+                for (let resposta of respostas) {
+                    if (resposta.checked) {
+                        if (resposta.value === "correto") {
+                            correto = true;
+                            totalCorreto++;
+                        }
+                        break;
+                    }
+                }
+
+                let feedback = document.getElementById(`feedback-q${i}`);
+                feedback.textContent = correto ? "Correto!" : "Resposta errada!";
+                feedback.style.color = correto ? "green" : "red";
+            }
+
+            document.getElementById("resultado").textContent = `Você acertou ${totalCorreto} de 5 perguntas.`;
+        }
+    </script>
+
+</body>
+</html>
