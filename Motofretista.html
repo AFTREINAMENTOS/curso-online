@@ -1,226 +1,138 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AF TREINAMENTO ONLINE</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>Curso de Condução Segura para Motofretistas</title>
     <style>
         body {
-            font-family: 'Roboto', sans-serif;
-            margin: 20px;
-            padding: 20px;
-            background-color: #f4f4f9;
-            color: #333;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
         }
-        h1, h2 {
-            color: #6a1b9a;
+        .header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
         }
-        .container {
-            max-width: 800px;
-            margin: auto;
+        .header h1 {
+            margin: 0;
         }
         .content {
-            background: #f9f9f9;
             padding: 20px;
+            margin: 20px auto;
+            background-color: white;
             border-radius: 8px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            max-width: 900px;
+        }
+        .content h2 {
+            color: #333;
+        }
+        .content p {
+            line-height: 1.6;
+            color: #555;
+        }
+        .content ul {
+            color: #555;
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+        .content img {
+            width: 100%;
+            max-width: 600px;
             margin-bottom: 20px;
-        }
-        .quiz-container {
-            background: #f9f9f9;
-            padding: 20px;
             border-radius: 8px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
         }
-        .btn {
-            background-color: #6a1b9a;
-            color: white;
-            padding: 12px;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-            font-size: 16px;
-            transition: background 0.3s;
-        }
-        .btn:hover {
-            background-color: #9c4dcc;
-        }
-        .correct {
-            color: green;
-            font-weight: bold;
-        }
-        .incorrect {
-            color: red;
-            font-weight: bold;
-        }
-        @media (max-width: 768px) {
-            .btn {
-                width: 100%;
-            }
+        .content strong {
+            color: #333;
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
+    <div class="header">
         <h1>Curso de Condução Segura para Motofretistas</h1>
-
-        <h2>Condução Segura</h2>
-
-        <div class="content">
-            <h2>1. Equipamentos de Segurança</h2>
-            <p>O uso correto de equipamentos de segurança é essencial para proteger a vida do motofretista, especialmente considerando os riscos envolvidos no trânsito. Vamos ver os principais:</p>
-            <ul>
-                <li><strong>Capacete com viseira:</strong> O capacete é obrigatório e deve ser de boa qualidade. A viseira ajuda a proteger os olhos contra vento, poeira e detritos, além de evitar cegueira temporária ao pegar chuva.</li>
-                <li><strong>Jaqueta com proteção:</strong> As jaquetas para moto geralmente vêm com proteções nos ombros, cotovelos e costas. Isso é essencial em caso de queda, pois minimiza os danos à pele e aos ossos.</li>
-                <li><strong>Luvas reforçadas:</strong> As luvas ajudam a evitar lesões nas mãos em caso de queda, além de garantir maior aderência ao guidão. Sempre opte por luvas que cubram os pulsos, que são vulneráveis.</li>
-                <li><strong>Botas de segurança:</strong> As botas protegem os pés e tornozelos, evitando torções e lesões sérias. Além disso, elas oferecem melhor controle sobre a moto, principalmente em frenagens.</li>
-            </ul>
-            <p><strong>Dica:</strong> Imagine um cenário onde um veículo inesperadamente corta sua frente. Caso esteja usando os equipamentos corretos, como a jaqueta e o capacete com viseira, o impacto será menos danoso.</p>
-        </div>
-
-        <div class="content">
-            <h2>2. Direção Defensiva</h2>
-            <p>Adotar uma postura defensiva pode ser a chave para evitar acidentes. Vamos explorar algumas práticas importantes para aplicar no dia a dia:</p>
-            <ul>
-                <li><strong>Antecipe as ações dos outros motoristas:</strong> Ao trafegar pelas ruas, é fundamental ficar atento ao comportamento de outros motoristas. Observe o movimento de outros veículos e se há sinais de perigo (como a mudança de faixa sem sinalização).</li>
-                <li><strong>Evite os pontos cegos:</strong> Sempre evite posicionar sua moto nos pontos cegos dos carros. Isso é crucial para a sua visibilidade e segurança.</li>
-                <li><strong>Mantenha distância segura:</strong> Mantenha uma distância de pelo menos dois segundos do veículo à frente. Isso lhe dá tempo suficiente para reagir a qualquer imprevisto.</li>
-                <li><strong>Seja visível:</strong> Mesmo durante o dia, mantenha os faróis acesos. A visibilidade aumenta e você se torna mais fácil de ser visto pelos outros motoristas.</li>
-            </ul>
-            <p><strong>Dica:</strong> Se você está atrás de um carro e ele começa a reduzir a velocidade sem motivo aparente, mantenha uma distância maior para evitar colisões.</p>
-        </div>
-
-        <h2>Avaliação - Condução Segura</h2>
-        <div class="quiz-container">
-            <form id="quizForm1">
-                <div class="question">
-                    <p>1. Qual o equipamento obrigatório para pilotagem segura?</p>
-                    <input type="radio" name="q1" value="a"> (A) Capacete com viseira<br>
-                    <input type="radio" name="q1" value="b"> (B) Luvas térmicas<br>
-                </div>
-                <div class="question">
-                    <p>2. Qual a melhor forma de evitar acidentes?</p>
-                    <input type="radio" name="q2" value="a"> (A) Manter distância segura e prever ações dos outros motoristas<br>
-                    <input type="radio" name="q2" value="b"> (B) Andar sempre em alta velocidade<br>
-                </div>
-                <button type="button" class="btn" onclick="verificarRespostas('quizForm1', 'resultado1', {'q1': 'a', 'q2': 'a'})">Enviar</button>
-            </form>
-            <div id="resultado1"></div>
-        </div>
-
-        <h2>Manutenção e Segurança Mecânica</h2>
-
-        <div class="content">
-            <h2>1. Revisão Diária da Moto</h2>
-            <p>Antes de pegar a estrada, é essencial revisar sua moto para evitar falhas mecânicas inesperadas.</p>
-            <ul>
-                <li><strong>Cheque os freios:</strong> Verifique se os freios respondem bem tanto ao pisar no pedal quanto ao puxar o manete. Se houver qualquer sensação estranha, é melhor verificar os sistemas imediatamente.</li>
-                <li><strong>Verifique os pneus:</strong> Pneus com pressão baixa ou desgastados comprometem a segurança. Calibre-os regularmente e troque-os quando o desgaste for significativo.</li>
-                <li><strong>Observe vazamentos:</strong> Fique atento a qualquer vazamento de óleo ou combustível. Isso pode ser indicativo de falhas que, se não tratadas, podem levar a acidentes.</li>
-                <li><strong>Testar as luzes e piscas:</strong> Certifique-se de que todas as luzes, faróis, lanternas e piscas estejam funcionando corretamente. Isso é fundamental para sua visibilidade e para indicar suas intenções aos outros motoristas.</li>
-            </ul>
-            <p><strong>Dica:</strong> Se você perceber que um dos pneus está visivelmente murcho, adiar a troca pode resultar em uma perda de aderência, aumentando as chances de acidente.</p>
-        </div>
-
-        <div class="content">
-            <h2>2. Manutenção Preventiva</h2>
-            <p>Manter a moto em boas condições evita gastos extras com reparos e aumenta sua segurança ao longo do tempo. Confira as principais manutenções preventivas:</p>
-            <ul>
-                <li><strong>Troca de óleo:</strong> A troca de óleo deve ser feita a cada intervalo recomendado pelo fabricante. O óleo sujo prejudica a lubrificação do motor, resultando em maior desgaste e superaquecimento.</li>
-                <li><strong>Lubrificação da corrente:</strong> A corrente deve ser lubrificada regularmente para evitar desgastes e quebras. Idealmente, a cada 500 km ou quando perceber que a corrente está seca.</li>
-                <li><strong>Troca de pneus:</strong> Quando o pneu atingir a profundidade mínima de sulco (geralmente 1mm), deve ser trocado. Pneus desgastados comprometem a estabilidade e segurança da pilotagem.</li>
-                <li><strong>Alinhamento e balanceamento:</strong> Fazer alinhamento e balanceamento dos pneus regularmente melhora a estabilidade da moto e evita desgaste irregular nos pneus.</li>
-            </ul>
-            <p><strong>Dica:</strong> Uma troca de óleo negligenciada pode fazer o motor superaquecer e até mesmo quebrar. Por isso, a manutenção preventiva é essencial.</p>
-        </div>
-
-        <h2>Avaliação - Manutenção e Segurança Mecânica</h2>
-        <div class="quiz-container">
-            <form id="quizForm2">
-                <div class="question">
-                    <p>1. O que é essencial verificar diariamente na moto?</p>
-                    <input type="radio" name="q3" value="a"> (A) Freios, pneus, luzes e vazamentos<br>
-                    <input type="radio" name="q3" value="b"> (B) Apenas a pintura da moto<br>
-                </div>
-                <div class="question">
-                    <p>2. Quando é recomendado trocar o óleo da moto?</p>
-                    <input type="radio" name="q4" value="a"> (A) A cada intervalo recomendado pelo fabricante<br>
-                    <input type="radio" name="q4" value="b"> (B) Quando o motor começar a fazer barulho<br>
-                </div>
-                <button type="button" class="btn" onclick="verificarRespostas('quizForm2', 'resultado2', {'q3': 'a', 'q4': 'a'})">Enviar</button>
-            </form>
-            <div id="resultado2"></div>
-        </div>
-
-        <h2>Condução Econômica e Zelando pela Carga</h2>
-
-        <div class="content">
-            <h2>1. Condução Econômica</h2>
-            <p>Uma condução econômica não apenas ajuda a reduzir custos com combustível, mas também diminui o impacto ambiental e prolonga a vida útil da sua moto. Aqui estão algumas práticas para economizar combustível e aumentar a eficiência do seu trajeto:</p>
-            <ul>
-                <li><strong>Evite acelerações e frenagens bruscas:</strong> Acelerações e frenagens fortes aumentam o consumo de combustível e desgastam os componentes da moto. Tente acelerar suavemente e antecipar as frenagens.</li>
-                <li><strong>Use marchas adequadas:</strong> Manter a moto em uma marcha mais baixa por muito tempo faz o motor trabalhar mais, o que aumenta o consumo de combustível. Troque de marcha de forma fluida e de acordo com a necessidade.</li>
-                <li><strong>Desacelere antes das paradas:</strong> Quando possível, desacelere utilizando o motor, sem precisar acionar os freios, o que ajuda a economizar combustível.</li>
-                <li><strong>Verifique a pressão dos pneus:</strong> Pneus com baixa pressão aumentam o atrito com o solo, fazendo o motor trabalhar mais e consumindo mais combustível. Calibre os pneus regularmente para garantir a eficiência do consumo.</li>
-            </ul>
-            <p><strong>Dica:</strong> Adote um ritmo constante de pilotagem, evitando acelerações bruscas e paradas repentinas. Além de ser mais seguro, isso também contribui para a economia de combustível.</p>
-        </div>
-
-        <div class="content">
-            <h2>2. Zelando pela Carga Transportada</h2>
-            <p>Quando você transporta carga, é fundamental que ela esteja bem posicionada e segura. Cargas mal amarradas podem representar riscos tanto para você quanto para os outros motoristas. Além disso, um transporte adequado contribui para a preservação do produto e para a sua segurança. Veja como:</p>
-            <ul>
-                <li><strong>Verifique o peso da carga:</strong> O peso da carga deve estar dentro dos limites recomendados para a sua moto. Excesso de peso pode prejudicar a estabilidade da moto e aumentar o risco de acidentes.</li>
-                <li><strong>Fixação segura da carga:</strong> Use cordas ou cintas para amarrar a carga de forma firme e segura, evitando que ela se movimente durante o trajeto. Certifique-se de que a carga esteja bem equilibrada.</li>
-                <li><strong>Distribua o peso de forma equilibrada:</strong> Se for transportar vários itens, distribua o peso de maneira uniforme entre a frente e a traseira da moto. Isso ajudará a manter a estabilidade e facilitará a pilotagem.</li>
-                <li><strong>Cuidado com a visibilidade:</strong> Evite que a carga bloqueie sua visão ou a de outros motoristas. Se necessário, use espelhos adicionais ou tenha cuidado redobrado ao mudar de faixa.</li>
-            </ul>
-            <p><strong>Dica:</strong> Se a carga estiver mal fixada e se soltar durante o trajeto, isso pode causar sérios acidentes. Sempre verifique se a carga está bem presa e segura antes de sair.</p>
-        </div>
-
-        <h2>Avaliação - Condução Econômica e Zelando pela Carga</h2>
-        <div class="quiz-container">
-            <form id="quizForm3">
-                <div class="question">
-                    <p>1. O que deve ser evitado para economizar combustível?</p>
-                    <input type="radio" name="q5" value="a"> (A) Acelerações e frenagens bruscas<br>
-                    <input type="radio" name="q5" value="b"> (B) Aceleração suave e trocas de marcha regulares<br>
-                </div>
-                <div class="question">
-                    <p>2. O que é essencial ao transportar carga?</p>
-                    <input type="radio" name="q6" value="a"> (A) Amarrar a carga de forma segura e distribuí-la de maneira equilibrada<br>
-                    <input type="radio" name="q6" value="b"> (B) Transportar mais carga do que a capacidade recomendada<br>
-                </div>
-                <button type="button" class="btn" onclick="verificarRespostas('quizForm3', 'resultado3', {'q5': 'a', 'q6': 'a'})">Enviar</button>
-            </form>
-            <div id="resultado3"></div>
-        </div>
-
     </div>
 
-    <script>
-        function verificarRespostas(formId, resultadoId, respostasCorretas) {
-            var pontuacao = 0;
-            var resultadoHtml = "<h3>Resultado:</h3>";
+    <div class="content">
+        <h2>1. Equipamentos de Segurança</h2>
+        <img src="https://example.com/equipamentos-seguranca.jpg" alt="Equipamentos de Segurança">
+        <p>O uso correto de equipamentos de segurança é essencial para proteger a vida do motofretista, especialmente considerando os riscos envolvidos no trânsito. Vamos ver os principais:</p>
+        <ul>
+            <li><strong>Capacete com viseira:</strong> O capacete é obrigatório e deve ser de boa qualidade. A viseira ajuda a proteger os olhos contra vento, poeira e detritos, além de evitar cegueira temporária ao pegar chuva.</li>
+            <li><strong>Jaqueta com proteção:</strong> As jaquetas para moto geralmente vêm com proteções nos ombros, cotovelos e costas. Isso é essencial em caso de queda, pois minimiza os danos à pele e aos ossos.</li>
+            <li><strong>Luvas reforçadas:</strong> As luvas ajudam a evitar lesões nas mãos em caso de queda, além de garantir maior aderência ao guidão. Sempre opte por luvas que cubram os pulsos, que são vulneráveis.</li>
+            <li><strong>Botas de segurança:</strong> As botas protegem os pés e tornozelos, evitando torções e lesões sérias. Além disso, elas oferecem melhor controle sobre a moto, principalmente em frenagens.</li>
+        </ul>
+        <p><strong>Dica:</strong> Imagine um cenário onde um veículo inesperadamente corta sua frente. Caso esteja usando os equipamentos corretos, como a jaqueta e o capacete com viseira, o impacto será menos danoso.</p>
+    </div>
 
-            for (var questao in respostasCorretas) {
-                var respostaUsuario = document.querySelector(`input[name="${questao}"]:checked`);
-                if (respostaUsuario) {
-                    if (respostaUsuario.value === respostasCorretas[questao]) {
-                        resultadoHtml += `<p class='correct'>${questao}: Correta ✅</p>`;
-                        pontuacao++;
-                    } else {
-                        resultadoHtml += `<p class='incorrect'>${questao}: Incorreta ❌</p>`;
-                    }
-                }
-            }
+    <div class="content">
+        <h2>2. Direção Defensiva</h2>
+        <img src="https://example.com/direcao-defensiva.jpg" alt="Direção Defensiva">
+        <p>Adotar uma postura defensiva pode ser a chave para evitar acidentes. Vamos explorar algumas práticas importantes para aplicar no dia a dia:</p>
+        <ul>
+            <li><strong>Antecipe as ações dos outros motoristas:</strong> Ao trafegar pelas ruas, é fundamental ficar atento ao comportamento de outros motoristas. Observe o movimento de outros veículos e se há sinais de perigo (como a mudança de faixa sem sinalização).</li>
+            <li><strong>Evite os pontos cegos:</strong> Sempre evite posicionar sua moto nos pontos cegos dos carros. Isso é crucial para a sua visibilidade e segurança.</li>
+            <li><strong>Mantenha distância segura:</strong> Mantenha uma distância de pelo menos dois segundos do veículo à frente. Isso lhe dá tempo suficiente para reagir a qualquer imprevisto.</li>
+            <li><strong>Seja visível:</strong> Mesmo durante o dia, mantenha os faróis acesos. A visibilidade aumenta e você se torna mais fácil de ser visto pelos outros motoristas.</li>
+        </ul>
+        <p><strong>Dica:</strong> Se você está atrás de um carro e ele começa a reduzir a velocidade sem motivo aparente, mantenha uma distância maior para evitar colisões.</p>
+    </div>
 
-            resultadoHtml += `<h3>Sua pontuação: ${pontuacao}/${Object.keys(respostasCorretas).length}</h3>`;
-            document.getElementById(resultadoId).innerHTML = resultadoHtml;
-        }
-    </script>
+    <div class="content">
+        <h2>3. Revisão Diária da Moto</h2>
+        <img src="https://example.com/revisao-moto.jpg" alt="Revisão Diária da Moto">
+        <p>Antes de pegar a estrada, é essencial revisar sua moto para evitar falhas mecânicas inesperadas.</p>
+        <ul>
+            <li><strong>Cheque os freios:</strong> Verifique se os freios respondem bem tanto ao pisar no pedal quanto ao puxar o manete. Se houver qualquer sensação estranha, é melhor verificar os sistemas imediatamente.</li>
+            <li><strong>Verifique os pneus:</strong> Pneus com pressão baixa ou desgastados comprometem a segurança. Calibre-os regularmente e troque-os quando o desgaste for significativo.</li>
+            <li><strong>Observe vazamentos:</strong> Fique atento a qualquer vazamento de óleo ou combustível. Isso pode ser indicativo de falhas que, se não tratadas, podem levar a acidentes.</li>
+            <li><strong>Testar as luzes e piscas:</strong> Certifique-se de que todas as luzes, faróis, lanternas e piscas estejam funcionando corretamente. Isso é fundamental para sua visibilidade e para indicar suas intenções aos outros motoristas.</li>
+        </ul>
+        <p><strong>Dica:</strong> Se você perceber que um dos pneus está visivelmente murcho, adiar a troca pode resultar em uma perda de aderência, aumentando as chances de acidente.</p>
+    </div>
+
+    <div class="content">
+        <h2>4. Manutenção Preventiva</h2>
+        <img src="https://example.com/manutencao-preventiva.jpg" alt="Manutenção Preventiva">
+        <p>Manter a moto em boas condições evita gastos extras com reparos e aumenta sua segurança ao longo do tempo. Confira as principais manutenções preventivas:</p>
+        <ul>
+            <li><strong>Troca de óleo:</strong> A troca de óleo deve ser feita a cada intervalo recomendado pelo fabricante. O óleo sujo prejudica a lubrificação do motor, resultando em maior desgaste e superaquecimento.</li>
+            <li><strong>Lubrificação da corrente:</strong> A corrente deve ser lubrificada regularmente para evitar desgastes e quebras. Idealmente, a cada 500 km ou quando perceber que a corrente está seca.</li>
+            <li><strong>Troca de pneus:</strong> Quando o pneu atingir a profundidade mínima de sulco (geralmente 1mm), deve ser trocado. Pneus desgastados comprometem a estabilidade e segurança da pilotagem.</li>
+            <li><strong>Alinhamento e balanceamento:</strong> Fazer alinhamento e balanceamento dos pneus regularmente melhora a estabilidade da moto e evita desgaste irregular nos pneus.</li>
+        </ul>
+        <p><strong>Dica:</strong> Uma troca de óleo negligenciada pode fazer o motor superaquecer e até mesmo quebrar. Por isso, a manutenção preventiva é essencial.</p>
+    </div>
+
+    <div class="content">
+        <h2>5. Condução Econômica</h2>
+        <img src="https://example.com/conducao-economica.jpg" alt="Condução Econômica">
+        <p>Uma condução econômica não apenas ajuda a reduzir custos com combustível, mas também diminui o impacto ambiental e prolonga a vida útil da sua moto. Aqui estão algumas práticas para economizar combustível e aumentar a eficiência do seu trajeto:</p>
+        <ul>
+            <li><strong>Evite acelerações e frenagens bruscas:</strong> Acelerações e frenagens fortes aumentam o consumo de combustível e desgastam os componentes da moto. Tente acelerar suavemente e antecipar as frenagens.</li>
+            <li><strong>Use marchas adequadas:</strong> Manter a moto em uma marcha mais baixa por muito tempo faz o motor trabalhar mais, o que aumenta o consumo de combustível. Troque de marcha de forma fluida e de acordo com a necessidade.</li>
+            <li><strong>Desacelere antes das paradas:</strong> Quando possível, desacelere utilizando o motor, sem precisar acionar os freios, o que ajuda a economizar combustível.</li>
+            <li><strong>Verifique a pressão dos pneus:</strong> Pneus com baixa pressão aumentam o atrito com o solo, fazendo o motor trabalhar mais e consumindo mais combustível. Calibre os pneus regularmente para garantir a eficiência do consumo.</li>
+        </ul>
+        <p><strong>Dica:</strong> Adote um ritmo constante de pilotagem, evitando acelerações bruscas e paradas repentinas. Além de ser mais seguro, isso também contribui para a economia de combustível.</p>
+    </div>
+
+    <div class="content">
+        <h2>6. Zelando pela Carga Transportada</h2>
+        <img src="https://example.com/zelando-carga.jpg" alt="Zelando pela Carga Transportada">
+        <p>Quando você transporta carga, é fundamental que ela esteja bem posicionada e segura. Cargas mal amarradas podem representar riscos tanto para você quanto para os outros motoristas. Além disso, um transporte adequado contribui para a preservação do produto e para a sua segurança. Veja como:</p>
+        <ul>
+            <li><strong>Verifique a amarração da carga:</strong> Certifique-se de que a carga está bem amarrada e não há risco de que ela se mova durante o trajeto. Utilize cordas ou cintas apropriadas para o tipo de carga.</li>
+            <li><strong>Distribua o peso uniformemente:</strong> A carga deve ser distribuída de forma equilibrada para não afetar a estabilidade da moto. Evite sobrecarregar um dos lados.</li>
+            <li><strong>Evite obstruir a visibilidade:</strong> Quando for transportar grandes volumes, verifique se a carga não obstrui sua visão ou a sinalização da moto, como faróis e piscas.</li>
+            <li><strong>Monitore o peso da carga:</strong> Não ultrapasse o limite de peso recomendado pela fabricante da moto. O excesso de peso pode comprometer o desempenho da moto e a sua segurança.</li>
+        </ul>
+        <p><strong>Dica:</strong> Se você perceber que a carga está balançando ou mexendo durante a pilotagem, pare e ajuste a amarração antes de continuar.</p>
+    </div>
 
 </body>
 </html>
