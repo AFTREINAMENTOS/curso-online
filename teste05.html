@@ -140,7 +140,7 @@
 
         <div class="nav-buttons">
             <button id="prev-question" onclick="changeQuestion(-1)" disabled>Voltar</button>
-            <button id="next-question" onclick="changeQuestion(1)">Próxima</button>
+            <button id="next-question" onclick="changeQuestion(1)" disabled>Próxima</button>
         </div>
 
         <button id="finalizar" onclick="verificarRespostas()" style="display:none;">Finalizar Avaliação</button>
@@ -165,6 +165,7 @@
         let currentPage = 1;
         const totalPages = 7;
         let currentQuestion = 0;
+        let answered = false; // Flag to check if question is answered
         const questions = [
             { text: "Qual é o equipamento de segurança obrigatório?", options: ["Luvas", "Capacete"], correct: 1 },
             { text: "Qual a distância mínima de segurança recomendada no trânsito?", options: ["1 segundo", "2 segundos"], correct: 1 },
@@ -201,15 +202,44 @@
             document.getElementById("question-container").innerHTML = `<p>${currentQuestion + 1}. ${q.text}</p>
                 <input type="radio" name="q${currentQuestion}" value="0"> ${q.options[0]}<br>
                 <input type="radio" name="q${currentQuestion}" value="1"> ${q.options[1]}<br>`;
-            
+
+            // Limpar feedback anterior
+            document.getElementById("question-container").innerHTML += '<div id="feedback"></div>';
+
             // Atualiza os botões de navegação da questão
             document.getElementById("prev-question").disabled = currentQuestion === 0;
             document.getElementById("next-question").disabled = currentQuestion === questions.length - 1;
+
+            answered = false; // Reset the answered flag
+        }
+
+        function checkAnswer() {
+            const selectedOption = document.querySelector(`input[name="q${currentQuestion}"]:checked`);
+            if (!selectedOption) return false; // Nenhuma resposta selecionada
+
+            const isCorrect = selectedOption.value == questions[currentQuestion].correct;
+            const feedback = document.getElementById("feedback");
+
+            if (isCorrect) {
+                feedback.textContent = "Resposta correta!";
+                feedback.style.color = "green";
+            } else {
+                feedback.textContent = "Resposta incorreta!";
+                feedback.style.color = "red";
+            }
+
+            answered = true; // Marca a questão como respondida
+            document.getElementById("next-question").disabled = false; // Habilita o botão "Próxima"
+            return true;
         }
 
         function changeQuestion(dir) {
-            currentQuestion += dir;
-            loadQuestion();
+            if (answered) {
+                currentQuestion += dir;
+                loadQuestion();
+            } else {
+                checkAnswer();
+            }
         }
 
         loadQuestion();
