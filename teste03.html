@@ -3,23 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Curso de Condução Segura para Motofretistas</title>
+    <title>Identificação de Luzes de Painel do Veículo</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
-            text-align: center;
         }
         .header {
             background-color: #333;
             color: white;
+            text-align: center;
             padding: 10px;
+        }
+        .progress-container {
+            width: 100%;
+            background-color: #ddd;
+        }
+        .progress-bar {
+            height: 10px;
+            width: 10%;
+            background-color: #4caf50;
+            transition: width 0.3s;
         }
         .content {
             padding: 20px;
-            margin: 20px auto 60px;
+            margin: 20px auto;
             background-color: white;
             border-radius: 8px;
             max-width: 900px;
@@ -32,6 +42,7 @@
             display: flex;
             justify-content: space-between;
             margin-top: 20px;
+            padding: 10px;
         }
         .nav-buttons button {
             padding: 10px 20px;
@@ -44,185 +55,203 @@
         .nav-buttons button:disabled {
             background-color: #ccc;
         }
-        .progress-container {
-            width: 100%;
-            background-color: #ddd;
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            height: 10px;
-        }
-        .progress-bar {
-            height: 10px;
-            width: 0%;
-            background-color: #007BFF;
-            transition: width 0.3s;
-        }
-        .status {
-            position: fixed;
-            bottom: 15px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-weight: bold;
-        }
-        .quiz div {
-            margin-bottom: 10px;
-        }
-        .feedback {
-            font-weight: bold;
-            margin-top: 5px;
-        }
-        #certificado {
-            display: none;
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
             margin-top: 20px;
         }
-        #certificado a {
-            display: inline-block;
+        #certificado-btn {
+            display: none;
+            margin-top: 20px;
+            background-color: #4caf50;
             padding: 10px 20px;
-            background-color: #25D366;
             color: white;
-            text-decoration: none;
+            border: none;
             border-radius: 5px;
-            font-weight: bold;
-        }
-        #certificado a:hover {
-            background-color: #1da851;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
 
     <div class="header">
-        <h1>Curso de Condução Segura para Motofretistas</h1>
-    </div>
-
-    <p class="status" id="status-text">Progresso: 0%</p>
-
-    <!-- Páginas de Conteúdo -->
-    <div class="content active" id="page-1">
-        <h2>1. Equipamentos de Segurança</h2>
-        <p>Texto sobre equipamentos de segurança...</p>
-    </div>
-
-    <div class="content" id="page-2">
-        <h2>2. Direção Defensiva</h2>
-        <p>Texto sobre direção defensiva...</p>
-    </div>
-
-    <div class="content" id="page-3">
-        <h2>3. Revisão Diária da Moto</h2>
-        <p>Texto sobre revisão diária da moto...</p>
-    </div>
-
-    <div class="content" id="page-4">
-        <h2>4. Manutenção Preventiva</h2>
-        <p>Texto sobre manutenção preventiva...</p>
-    </div>
-
-    <div class="content" id="page-5">
-        <h2>5. Condução Econômica</h2>
-        <p>Texto sobre condução econômica...</p>
-    </div>
-
-    <div class="content" id="page-6">
-        <h2>6. Zelando pela Carga Transportada</h2>
-        <p>Texto sobre a carga transportada...</p>
-    </div>
-
-    <!-- Avaliação Final -->
-    <div class="content" id="page-7">
-        <h2>Avaliação Final</h2>
-        <p>Responda as perguntas abaixo e veja seu resultado.</p>
-
-        <div class="quiz">
-            <div>
-                <p>1. Qual é o equipamento de segurança obrigatório?</p>
-                <input type="radio" name="q1" value="errado"> Luvas<br>
-                <input type="radio" name="q1" value="correto"> Capacete<br>
-                <p class="feedback" id="feedback-q1"></p>
-            </div>
-
-            <div>
-                <p>2. Qual a distância mínima de segurança recomendada no trânsito?</p>
-                <input type="radio" name="q2" value="errado"> 1 segundo<br>
-                <input type="radio" name="q2" value="correto"> 2 segundos<br>
-                <p class="feedback" id="feedback-q2"></p>
-            </div>
-        </div>
-
-        <button onclick="verificarRespostas()">Finalizar Avaliação</button>
-        <p id="resultado"></p>
-
-        <div id="certificado">
-            <h3>Parabéns! Você pode solicitar seu certificado.</h3>
-            <a id="whatsapp-link" href="#" target="_blank">Solicitar pelo WhatsApp</a>
-        </div>
-    </div>
-
-    <div class="nav-buttons">
-        <button id="prev-btn" onclick="changePage(-1)" disabled>Voltar</button>
-        <button id="next-btn" onclick="changePage(1)">Avançar</button>
+        <h1>Identificação de Luzes de Painel do Veículo</h1>
     </div>
 
     <div class="progress-container">
         <div class="progress-bar" id="progress-bar"></div>
     </div>
 
+    <!-- Página 1 -->
+    <div class="content active" id="page-1">
+        <h2>1. Introdução às Luzes de Painel</h2>
+        <p>As luzes de painel do carro são sinais importantes que informam ao motorista sobre o funcionamento do veículo. Cada luz tem uma função específica e deve ser tratada com a devida atenção.</p>
+        <p><strong>Dica Prática:</strong> Fique sempre atento às luzes do painel, elas ajudam a identificar problemas antes que se tornem mais graves.</p>
+        <img src="https://via.placeholder.com/800x400?text=Luzes+de+Painel" alt="Introdução às luzes de painel">
+    </div>
+
+    <!-- Página 2 -->
+    <div class="content" id="page-2">
+        <h2>2. Luz do Motor (Check Engine)</h2>
+        <p>Uma das luzes mais comuns e importantes é a luz do motor, também conhecida como "Check Engine". Quando essa luz acende, pode indicar um problema no motor ou no sistema de emissões.</p>
+        <p><strong>Dica Prática:</strong> Se a luz do motor acender, é recomendável levar o veículo a um mecânico para diagnóstico, mesmo que o carro esteja funcionando normalmente.</p>
+        <img src="https://via.placeholder.com/800x400?text=Luz+do+Motor" alt="Luz do motor">
+    </div>
+
+    <!-- Página 3 -->
+    <div class="content" id="page-3">
+        <h2>3. Luz de Óleo</h2>
+        <p>A luz de óleo acende quando o nível de óleo do motor está baixo ou quando a pressão do óleo está insuficiente.</p>
+        <p><strong>Dica Prática:</strong> Verifique o nível de óleo imediatamente ao acender a luz. Se o nível estiver baixo, complete com o óleo adequado.</p>
+        <img src="https://via.placeholder.com/800x400?text=Luz+de+Óleo" alt="Luz de óleo">
+    </div>
+
+    <!-- Página 4 -->
+    <div class="content" id="page-4">
+        <h2>4. Luz de Temperatura do Motor</h2>
+        <p>A luz de temperatura acende quando o motor está superaquecendo. Isso pode ser causado por problemas no sistema de arrefecimento, como falta de água no radiador ou falha na bomba de água.</p>
+        <p><strong>Dica Prática:</strong> Se essa luz acender, pare o carro imediatamente e deixe o motor esfriar. Verifique o nível de água do radiador e procure um mecânico.</p>
+        <img src="https://via.placeholder.com/800x400?text=Luz+de+Temperatura" alt="Luz de temperatura do motor">
+    </div>
+
+    <!-- Página 5 -->
+    <div class="content" id="page-5">
+        <h2>5. Luz de Bateria</h2>
+        <p>A luz da bateria acende quando há um problema no sistema de carregamento do carro, como a falha do alternador ou um cabo solto.</p>
+        <p><strong>Dica Prática:</strong> Se a luz da bateria acender, verifique a fiação e o alternador. Se o problema persistir, procure um profissional para evitar ficar na estrada com a bateria descarregada.</p>
+        <img src="https://via.placeholder.com/800x400?text=Luz+de+Bateria" alt="Luz de bateria">
+    </div>
+
+    <!-- Página 6 -->
+    <div class="content" id="page-6">
+        <h2>6. Luz de Freio</h2>
+        <p>A luz de freio pode acender por várias razões, como o nível baixo de fluido de freio ou quando o sistema de freios precisa de manutenção.</p>
+        <p><strong>Dica Prática:</strong> Verifique o nível do fluido de freio. Se a luz acender e o freio não estiver funcionando corretamente, leve o carro imediatamente a um mecânico.</p>
+        <img src="https://via.placeholder.com/800x400?text=Luz+de+Freio" alt="Luz de freio">
+    </div>
+
+    <!-- Página 7 -->
+    <div class="content" id="page-7">
+        <h2>7. Luz de ABS</h2>
+        <p>A luz do ABS (Sistema de Antibloqueio de Rodas) acende quando há uma falha nesse sistema, que é responsável por evitar o travamento das rodas durante frenagens bruscas.</p>
+        <p><strong>Dica Prática:</strong> Caso a luz do ABS acenda, verifique o sistema de frenagem o quanto antes para garantir que o sistema esteja funcionando corretamente.</p>
+        <img src="https://via.placeholder.com/800x400?text=Luz+de+ABS" alt="Luz de ABS">
+    </div>
+
+    <!-- Página 8 -->
+    <div class="content" id="page-8">
+        <h2>8. Luz de Cinto de Segurança</h2>
+        <p>A luz do cinto de segurança acende quando o motorista ou passageiro não está usando o cinto de segurança. Além de ser uma medida de segurança, é obrigatório por lei.</p>
+        <p><strong>Dica Prática:</strong> Sempre use o cinto de segurança. Se a luz acender, pare o veículo com segurança e coloque o cinto.</p>
+        <img src="https://via.placeholder.com/800x400?text=Luz+de+Cinto" alt="Luz de cinto de segurança">
+    </div>
+
+    <!-- Página 9 -->
+    <div class="content" id="page-9">
+        <h2>9. Luz de Direção Hidráulica</h2>
+        <p>A luz de direção hidráulica acende quando há falha no sistema de direção assistida do veículo, o que pode dificultar a manobra do carro.</p>
+        <p><strong>Dica Prática:</strong> Se essa luz acender, é importante verificar o nível do fluido de direção e procurar um mecânico se necessário.</p>
+        <img src="https://via.placeholder.com/800x400?text=Luz+de+Direção+Hidráulica" alt="Luz de direção hidráulica">
+    </div>
+
+    <!-- Página 10 -->
+    <div class="content" id="page-10">
+        <h2>10. Luz de Airbag</h2>
+        <p>A luz do airbag acende quando há um problema no sistema de segurança do veículo. Isso pode afetar a ativação do airbag em caso de acidente.</p>
+        <p><strong>Dica Prática:</strong> Caso a luz do airbag acenda, leve o carro ao mecânico o mais rápido possível para garantir que o sistema esteja funcionando adequadamente.</p>
+        <img src="https://via.placeholder.com/800x400?text=Luz+de+Airbag" alt="Luz de Airbag">
+    </div>
+
+    <!-- Página 11 - Avaliação -->
+    <div class="content" id="page-11">
+        <h2>Avaliação Final</h2>
+        <form id="quiz-form">
+            <p>1. O que significa a luz de "Check Engine"?</p>
+            <input type="radio" name="q1" value="certo"> Problema no motor ou no sistema de emissões <br>
+            <input type="radio" name="q1" value="errado"> Problema no sistema de direção <br>
+
+            <p>2. O que indica a luz de óleo acesa?</p>
+            <input type="radio" name="q2" value="certo"> Nível de óleo baixo <br>
+            <input type="radio" name="q2" value="errado"> Problema na suspensão <br>
+
+            <p>3. O que significa a luz de temperatura acesa?</p>
+            <input type="radio" name="q3" value="certo"> Motor superaquecendo <br>
+            <input type="radio" name="q3" value="errado"> Nível baixo de fluido de direção <br>
+
+            <p>4. O que acontece se a luz de freio acender?</p>
+            <input type="radio" name="q4" value="certo"> Pode indicar problemas no sistema de freios <br>
+            <input type="radio" name="q4" value="errado"> O carro pode ter um desempenho melhor <br>
+
+            <p>5. O que significa a luz de ABS acesa?</p>
+            <input type="radio" name="q5" value="certo"> Falha no sistema de antibloqueio de rodas <br>
+            <input type="radio" name="q5" value="errado"> Aumento da potência do motor <br>
+
+            <p>6. O que indica a luz do cinto de segurança?</p>
+            <input type="radio" name="q6" value="certo"> O motorista ou passageiro não está usando o cinto de segurança <br>
+            <input type="radio" name="q6" value="errado"> O cinto de segurança está com defeito <br>
+
+            <p>7. O que acontece quando a luz de direção hidráulica acende?</p>
+            <input type="radio" name="q7" value="certo"> Pode haver falha no sistema de direção assistida <br>
+            <input type="radio" name="q7" value="errado"> O carro está com falta de combustível <br>
+
+            <p>8. O que significa a luz do airbag acesa?</p>
+            <input type="radio" name="q8" value="certo"> Falha no sistema de airbag <br>
+            <input type="radio" name="q8" value="errado"> Problema no sistema de iluminação <br>
+
+            <br><br>
+            <button type="button" onclick="submitQuiz()">Finalizar Avaliação</button>
+        </form>
+        <div id="feedback"></div>
+    </div>
+
+    <div class="nav-buttons">
+        <button id="prev-btn" onclick="changePage(-1)" disabled>Anterior</button>
+        <button id="next-btn" onclick="changePage(1)">Próximo</button>
+    </div>
+
+    <button id="certificado-btn">Baixar Certificado</button>
+
     <script>
         let currentPage = 1;
-        const totalPages = 7;
+        const totalPages = 11;
 
         function changePage(direction) {
             document.getElementById(`page-${currentPage}`).classList.remove('active');
             currentPage += direction;
             document.getElementById(`page-${currentPage}`).classList.add('active');
+            updateNavigation();
+            updateProgressBar();
+        }
 
+        function updateNavigation() {
             document.getElementById('prev-btn').disabled = currentPage === 1;
             document.getElementById('next-btn').disabled = currentPage === totalPages;
-
-            updateProgress();
         }
 
-        function updateProgress() {
-            let progress = ((currentPage - 1) / (totalPages - 1)) * 100;
+        function updateProgressBar() {
+            const progress = (currentPage / totalPages) * 100;
             document.getElementById('progress-bar').style.width = `${progress}%`;
-            document.getElementById('status-text').textContent = `Progresso: ${Math.round(progress)}%`;
+            if (currentPage === totalPages) {
+                document.getElementById('certificado-btn').style.display = 'block';
+            }
         }
 
-        function verificarRespostas() {
-            let totalCorreto = 0;
-            let totalPerguntas = 2;
-
-            for (let i = 1; i <= totalPerguntas; i++) {
-                let respostas = document.getElementsByName(`q${i}`);
-                let correto = false;
-
-                for (let resposta of respostas) {
-                    if (resposta.checked) {
-                        if (resposta.value === "correto") {
-                            correto = true;
-                            totalCorreto++;
-                        }
-                        break;
-                    }
+        function submitQuiz() {
+            const form = document.getElementById('quiz-form');
+            const formData = new FormData(form);
+            let score = 0;
+            formData.forEach((value, key) => {
+                if (value === 'certo') {
+                    score++;
                 }
-
-                let feedback = document.getElementById(`feedback-q${i}`);
-                feedback.textContent = correto ? "Correto!" : "Resposta errada!";
-                feedback.style.color = correto ? "green" : "red";
-            }
-
-            let resultado = `Você acertou ${totalCorreto} de ${totalPerguntas}.`;
-            document.getElementById("resultado").textContent = resultado;
-
-            if (totalCorreto / totalPerguntas >= 0.5) {
-                let whatsappMessage = encodeURIComponent(`Olá, finalizei o curso de Condução Segura para Motofretistas e acertei ${totalCorreto} de ${totalPerguntas}. Gostaria de solicitar meu certificado.`);
-                let whatsappLink = `https://wa.me/?text=${whatsappMessage}`;
-                document.getElementById("whatsapp-link").href = whatsappLink;
-                document.getElementById("certificado").style.display = "block";
-            }
+            });
+            const feedback = document.getElementById('feedback');
+            feedback.innerHTML = `Você acertou ${score} de 8 questões.`;
         }
-    </script>
 
+        updateNavigation();
+        updateProgressBar();
+    </script>
 </body>
 </html>
