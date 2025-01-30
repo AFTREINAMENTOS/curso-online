@@ -61,6 +61,12 @@
             color: white;
             margin-top: 20px;
         }
+        .dica {
+            background-color: #ffffcc;
+            padding: 10px;
+            border-left: 5px solid #ffcc00;
+            margin-top: 10px;
+        }
     </style>
 </head>
 <body>
@@ -75,67 +81,67 @@
 
     <div class="content active" id="page-1">
         <h2>1. Introdução à Mecânica Básica</h2>
-        <p>Este curso ajudará mulheres a entenderem o funcionamento dos veículos e realizarem manutenções básicas.</p>
+        <p>Este curso foi desenvolvido para ajudar mulheres a entenderem o funcionamento do seu veículo e aprenderem noções de manutenção preventiva.</p>
+        <div class="dica"><strong>Dica:</strong> Conhecer seu carro evita surpresas e economiza dinheiro com mecânicos.</div>
     </div>
 
     <div class="content" id="page-2">
         <h2>2. O Motor e Seus Componentes</h2>
-        <p>O motor transforma combustível em energia. Componentes principais:</p>
+        <p>O motor é o coração do carro. Ele converte energia química do combustível em energia mecânica para movimentar o veículo.</p>
         <ul>
-            <li>Bloco do motor</li>
-            <li>Pistões</li>
-            <li>Velas de ignição</li>
+            <li><strong>Bloco do motor:</strong> Abriga os cilindros onde ocorre a combustão.</li>
+            <li><strong>Pistões:</strong> Movem-se para cima e para baixo dentro dos cilindros.</li>
+            <li><strong>Velas de ignição:</strong> Produzem faíscas que inflamam o combustível.</li>
         </ul>
+        <div class="dica"><strong>Dica:</strong> Troque o óleo do motor regularmente para evitar desgaste e falhas.</div>
     </div>
 
     <div class="content" id="page-3">
         <h2>3. Sistema de Transmissão</h2>
-        <p>O sistema de transmissão leva a força do motor para as rodas.</p>
+        <p>A transmissão leva a força do motor para as rodas. Pode ser manual ou automática.</p>
+        <div class="dica"><strong>Dica:</strong> Evite descansar o pé na embreagem para prolongar sua vida útil.</div>
     </div>
 
     <div class="content" id="page-4">
         <h2>4. Freios e Segurança</h2>
-        <p>Manutenção dos freios é essencial para a segurança do veículo.</p>
+        <p>Os freios são essenciais para parar o carro com segurança. Existem freios a disco e a tambor.</p>
+        <div class="dica"><strong>Dica:</strong> Se ouvir ruídos ao frear, leve o carro ao mecânico para verificar as pastilhas.</div>
     </div>
 
     <div class="content" id="page-5">
         <h2>5. Suspensão e Pneus</h2>
-        <p>A suspensão mantém a estabilidade do carro. Cuide dos pneus para garantir segurança.</p>
+        <p>A suspensão mantém o carro estável e absorve impactos da estrada.</p>
+        <div class="dica"><strong>Dica:</strong> Calibre os pneus a cada 15 dias para evitar desgaste irregular.</div>
     </div>
 
     <div class="content" id="page-6">
         <h2>6. Sistema Elétrico e Bateria</h2>
-        <p>O sistema elétrico inclui alternador, bateria e fusíveis.</p>
+        <p>A bateria fornece energia para o carro. Se ela falhar, o carro pode não ligar.</p>
+        <div class="dica"><strong>Dica:</strong> Evite deixar os faróis ligados com o carro desligado para não descarregar a bateria.</div>
     </div>
 
     <div class="content" id="page-7">
         <h2>7. Manutenção Preventiva</h2>
-        <p>Verifique regularmente óleo, filtros e fluido de freio.</p>
+        <p>Manter o carro revisado aumenta sua durabilidade e evita gastos desnecessários.</p>
+        <div class="dica"><strong>Dica:</strong> Consulte o manual do veículo para seguir o cronograma de revisões.</div>
     </div>
 
     <div class="content" id="page-8">
         <h2>8. Emergências e Soluções Rápidas</h2>
         <p>Saiba como agir em caso de pane elétrica ou pneu furado.</p>
+        <div class="dica"><strong>Dica:</strong> Tenha um kit de ferramentas básicas no carro.</div>
     </div>
 
     <div class="content" id="page-9">
         <h2>9. Fluidos Essenciais do Veículo</h2>
-        <p>Confira e troque os seguintes fluidos regularmente:</p>
-        <ul>
-            <li>Óleo do motor</li>
-            <li>Água do radiador</li>
-            <li>Fluido de freio</li>
-        </ul>
+        <p>Troque regularmente o óleo do motor, fluido de freio e líquido de arrefecimento.</p>
+        <div class="dica"><strong>Dica:</strong> Nunca complete o líquido de arrefecimento com água pura.</div>
     </div>
 
     <div class="content" id="page-10">
         <h2>10. Checklist para Longas Viagens</h2>
-        <p>Antes de uma viagem, verifique:</p>
-        <ul>
-            <li>Pneus calibrados</li>
-            <li>Nível de óleo e água</li>
-            <li>Freios funcionando corretamente</li>
-        </ul>
+        <p>Antes de viajar, verifique os pneus, nível de óleo e faróis.</p>
+        <div class="dica"><strong>Dica:</strong> Sempre leve um estepe em boas condições.</div>
     </div>
 
     <div class="content" id="page-11">
@@ -144,10 +150,6 @@
             <p>1. Qual a principal função do motor?</p>
             <input type="radio" name="q1" value="certo"> Transformar combustível em energia <br>
             <input type="radio" name="q1" value="errado"> Apenas manter o carro ligado <br>
-
-            <p>2. O que indica a necessidade de troca de pastilhas de freio?</p>
-            <input type="radio" name="q2" value="certo"> Ruído metálico ao frear <br>
-            <input type="radio" name="q2" value="errado"> Luz de seta piscando rápido <br>
 
             <br>
             <button type="button" onclick="checkQuiz()">Ver Resultado</button>
@@ -160,28 +162,17 @@
         <button id="next-btn" onclick="changePage(1)">Próximo</button>
     </div>
 
-    <div class="footer">
-        Progresso: <span id="progress-text">1 / 11</span>
-    </div>
-
     <script>
         let currentPage = 1;
         function changePage(direction) {
             document.getElementById(`page-${currentPage}`).classList.remove('active');
             currentPage += direction;
             document.getElementById(`page-${currentPage}`).classList.add('active');
-
-            let progress = (currentPage / 11) * 100;
-            document.getElementById('progress-bar').style.width = progress + "%";
-            document.getElementById('progress-text').innerText = `${currentPage} / 11`;
-
-            document.getElementById("prev-btn").disabled = (currentPage === 1);
-            document.getElementById("next-btn").disabled = (currentPage === 11);
         }
 
         function checkQuiz() {
             let correct = document.querySelectorAll('input[value="certo"]:checked').length;
-            document.getElementById("quiz-result").innerText = `Você acertou ${correct} de 2 questões!`;
+            document.getElementById("quiz-result").innerText = `Você acertou ${correct} de 1 questão!`;
         }
     </script>
 
