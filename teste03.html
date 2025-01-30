@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de Condução Segura para Motofretistas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        .header {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+        }
+        .content {
+            padding: 20px;
+            margin: 20px auto 60px;
+            background-color: white;
+            border-radius: 8px;
+            max-width: 900px;
+            display: none;
+        }
+        .content.active {
+            display: block;
+        }
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .nav-buttons button {
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .nav-buttons button:disabled {
+            background-color: #ccc;
+        }
+        .progress-container {
+            width: 100%;
+            background-color: #ddd;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            height: 10px;
+        }
+        .progress-bar {
+            height: 10px;
+            width: 0%;
+            background-color: #007BFF;
+            transition: width 0.3s;
+        }
+        .status {
+            position: fixed;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-weight: bold;
+        }
+        .quiz div {
+            margin-bottom: 10px;
+        }
+        .feedback {
+            font-weight: bold;
+            margin-top: 5px;
+        }
+        #certificado {
+            display: none;
+            margin-top: 20px;
+        }
+        #certificado a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #25D366;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        #certificado a:hover {
+            background-color: #1da851;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Curso de Condução Segura para Motofretistas</h1>
+    </div>
+
+    <p class="status" id="status-text">Progresso: 0%</p>
+
+    <!-- Páginas de Conteúdo -->
+    <div class="content active" id="page-1">
+        <h2>1. Equipamentos de Segurança</h2>
+        <p>Texto sobre equipamentos de segurança...</p>
+    </div>
+
+    <div class="content" id="page-2">
+        <h2>2. Direção Defensiva</h2>
+        <p>Texto sobre direção defensiva...</p>
+    </div>
+
+    <div class="content" id="page-3">
+        <h2>3. Revisão Diária da Moto</h2>
+        <p>Texto sobre revisão diária da moto...</p>
+    </div>
+
+    <div class="content" id="page-4">
+        <h2>4. Manutenção Preventiva</h2>
+        <p>Texto sobre manutenção preventiva...</p>
+    </div>
+
+    <div class="content" id="page-5">
+        <h2>5. Condução Econômica</h2>
+        <p>Texto sobre condução econômica...</p>
+    </div>
+
+    <div class="content" id="page-6">
+        <h2>6. Zelando pela Carga Transportada</h2>
+        <p>Texto sobre a carga transportada...</p>
+    </div>
+
+    <!-- Avaliação Final -->
+    <div class="content" id="page-7">
+        <h2>Avaliação Final</h2>
+        <p>Responda as perguntas abaixo e veja seu resultado.</p>
+
+        <div class="quiz">
+            <div>
+                <p>1. Qual é o equipamento de segurança obrigatório?</p>
+                <input type="radio" name="q1" value="errado"> Luvas<br>
+                <input type="radio" name="q1" value="correto"> Capacete<br>
+                <p class="feedback" id="feedback-q1"></p>
+            </div>
+
+            <div>
+                <p>2. Qual a distância mínima de segurança recomendada no trânsito?</p>
+                <input type="radio" name="q2" value="errado"> 1 segundo<br>
+                <input type="radio" name="q2" value="correto"> 2 segundos<br>
+                <p class="feedback" id="feedback-q2"></p>
+            </div>
+        </div>
+
+        <button onclick="verificarRespostas()">Finalizar Avaliação</button>
+        <p id="resultado"></p>
+
+        <div id="certificado">
+            <h3>Parabéns! Você pode solicitar seu certificado.</h3>
+            <a id="whatsapp-link" href="#" target="_blank">Solicitar pelo WhatsApp</a>
+        </div>
+    </div>
+
+    <div class="nav-buttons">
+        <button id="prev-btn" onclick="changePage(-1)" disabled>Voltar</button>
+        <button id="next-btn" onclick="changePage(1)">Avançar</button>
+    </div>
+
+    <div class="progress-container">
+        <div class="progress-bar" id="progress-bar"></div>
+    </div>
+
+    <script>
+        let currentPage = 1;
+        const totalPages = 7;
+
+        function changePage(direction) {
+            document.getElementById(`page-${currentPage}`).classList.remove('active');
+            currentPage += direction;
+            document.getElementById(`page-${currentPage}`).classList.add('active');
+
+            document.getElementById('prev-btn').disabled = currentPage === 1;
+            document.getElementById('next-btn').disabled = currentPage === totalPages;
+
+            updateProgress();
+        }
+
+        function updateProgress() {
+            let progress = ((currentPage - 1) / (totalPages - 1)) * 100;
+            document.getElementById('progress-bar').style.width = `${progress}%`;
+            document.getElementById('status-text').textContent = `Progresso: ${Math.round(progress)}%`;
+        }
+
+        function verificarRespostas() {
+            let totalCorreto = 0;
+            let totalPerguntas = 2;
+
+            for (let i = 1; i <= totalPerguntas; i++) {
+                let respostas = document.getElementsByName(`q${i}`);
+                let correto = false;
+
+                for (let resposta of respostas) {
+                    if (resposta.checked) {
+                        if (resposta.value === "correto") {
+                            correto = true;
+                            totalCorreto++;
+                        }
+                        break;
+                    }
+                }
+
+                let feedback = document.getElementById(`feedback-q${i}`);
+                feedback.textContent = correto ? "Correto!" : "Resposta errada!";
+                feedback.style.color = correto ? "green" : "red";
+            }
+
+            let resultado = `Você acertou ${totalCorreto} de ${totalPerguntas}.`;
+            document.getElementById("resultado").textContent = resultado;
+
+            if (totalCorreto / totalPerguntas >= 0.5) {
+                let whatsappMessage = encodeURIComponent(`Olá, finalizei o curso de Condução Segura para Motofretistas e acertei ${totalCorreto} de ${totalPerguntas}. Gostaria de solicitar meu certificado.`);
+                let whatsappLink = `https://wa.me/?text=${whatsappMessage}`;
+                document.getElementById("whatsapp-link").href = whatsappLink;
+                document.getElementById("certificado").style.display = "block";
+            }
+        }
+    </script>
+
+</body>
+</html>
