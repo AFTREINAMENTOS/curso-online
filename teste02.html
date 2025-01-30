@@ -3,37 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Curso de Condução Segura para Motofretistas</title>
+    <title>Noções de Mecânica Básica para Mulheres</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
-            text-align: center;
         }
         .header {
             background-color: #333;
             color: white;
+            text-align: center;
             padding: 10px;
         }
         .progress-container {
             width: 100%;
             background-color: #ddd;
-            position: fixed;
-            top: 50px;
-            left: 0;
-            height: 10px;
         }
         .progress-bar {
             height: 10px;
-            width: 0%;
-            background-color: #007BFF;
+            width: 10%;
+            background-color: #4caf50;
             transition: width 0.3s;
         }
         .content {
             padding: 20px;
-            margin: 80px auto 20px;
+            margin: 20px auto;
             background-color: white;
             border-radius: 8px;
             max-width: 900px;
@@ -46,6 +42,7 @@
             display: flex;
             justify-content: space-between;
             margin-top: 20px;
+            padding: 10px;
         }
         .nav-buttons button {
             padding: 10px 20px;
@@ -58,85 +55,114 @@
         .nav-buttons button:disabled {
             background-color: #ccc;
         }
-        .status {
+        .dica {
+            background-color: #ffffcc;
+            padding: 10px;
+            border-left: 5px solid #ffcc00;
             margin-top: 10px;
-            font-weight: bold;
         }
     </style>
 </head>
 <body>
 
     <div class="header">
-        <h1>Curso de Condução Segura para Motofretistas</h1>
+        <h1>Noções de Mecânica Básica para Mulheres</h1>
     </div>
 
     <div class="progress-container">
         <div class="progress-bar" id="progress-bar"></div>
     </div>
 
-    <p class="status" id="status-text">Progresso: 0%</p>
-
-    <!-- Páginas de Conteúdo -->
     <div class="content active" id="page-1">
-        <h2>1. Equipamentos de Segurança</h2>
-        <p>Texto sobre equipamentos de segurança...</p>
+        <h2>1. Introdução à Mecânica Básica</h2>
+        <p>Este curso foi desenvolvido para ajudar mulheres a entenderem o funcionamento do seu veículo e aprenderem noções de manutenção preventiva.</p>
+        <div class="dica"><strong>Dica:</strong> Conhecer seu carro evita surpresas e economiza dinheiro com mecânicos.</div>
     </div>
 
     <div class="content" id="page-2">
-        <h2>2. Direção Defensiva</h2>
-        <p>Texto sobre direção defensiva...</p>
+        <h2>2. O Motor e Seus Componentes</h2>
+        <p>O motor é o coração do veículo, responsável por transformar combustível em energia para movimentar o carro.</p>
+        <ul>
+            <li><strong>Bloco do motor:</strong> Parte principal que abriga cilindros e pistões.</li>
+            <li><strong>Cabeçote:</strong> Contém válvulas e permite a entrada de ar e combustível.</li>
+            <li><strong>Óleo do motor:</strong> Lubrifica as peças para evitar desgaste.</li>
+        </ul>
+        <div class="dica"><strong>Dica:</strong> Troque o óleo do motor a cada 5.000 a 10.000 km.</div>
     </div>
 
     <div class="content" id="page-3">
-        <h2>3. Revisão Diária da Moto</h2>
-        <p>Texto sobre revisão diária da moto...</p>
+        <h2>3. Sistema de Transmissão</h2>
+        <p>O sistema de transmissão é responsável por transferir a potência do motor para as rodas do veículo.</p>
+        <ul>
+            <li><strong>Embreagem:</strong> Em carros manuais, permite a troca de marchas.</li>
+            <li><strong>Câmbio:</strong> Define a velocidade e o torque transmitido às rodas.</li>
+            <li><strong>Eixo de transmissão:</strong> Conecta o câmbio às rodas.</li>
+        </ul>
+        <div class="dica"><strong>Dica:</strong> Evite descansar o pé na embreagem para aumentar sua durabilidade.</div>
     </div>
 
     <div class="content" id="page-4">
-        <h2>4. Manutenção Preventiva</h2>
-        <p>Texto sobre manutenção preventiva...</p>
+        <h2>4. Freios e Segurança</h2>
+        <p>O sistema de freios é fundamental para garantir segurança ao dirigir.</p>
+        <ul>
+            <li><strong>Pastilhas de freio:</strong> Sofrem desgaste e precisam ser trocadas periodicamente.</li>
+            <li><strong>Fluido de freio:</strong> Deve ser substituído conforme o manual do fabricante.</li>
+            <li><strong>Freios ABS:</strong> Evitam o travamento das rodas em frenagens bruscas.</li>
+        </ul>
+        <div class="dica"><strong>Dica:</strong> Se ouvir um ruído metálico ao frear, troque as pastilhas imediatamente.</div>
     </div>
 
-    <div class="content" id="page-5">
-        <h2>5. Condução Econômica</h2>
-        <p>Texto sobre condução econômica...</p>
-    </div>
-
-    <div class="content" id="page-6">
-        <h2>6. Zelando pela Carga Transportada</h2>
-        <p>Texto sobre a carga transportada...</p>
-    </div>
-
-    <!-- Avaliação Final -->
-    <div class="content" id="page-7">
+    <div class="content" id="page-11">
         <h2>Avaliação Final</h2>
-        <p>Responda as perguntas abaixo e veja seu resultado.</p>
+        <form id="quiz-form">
+            <p>1. Qual a principal função do motor?</p>
+            <input type="radio" name="q1" value="certo"> Transformar combustível em energia <br>
+            <input type="radio" name="q1" value="errado"> Apenas manter o carro ligado <br>
+
+            <p>2. O que indica a necessidade de troca de pastilhas de freio?</p>
+            <input type="radio" name="q2" value="certo"> Ruído metálico ao frear <br>
+            <input type="radio" name="q2" value="errado"> Volante tremendo <br>
+
+            <p>3. Qual item faz parte do sistema elétrico?</p>
+            <input type="radio" name="q3" value="certo"> Alternador <br>
+            <input type="radio" name="q3" value="errado"> Pistão <br>
+
+            <p>10. O que fazer se a luz do freio acender no painel?</p>
+            <input type="radio" name="q10" value="certo"> Verificar as pastilhas de freio <br>
+            <input type="radio" name="q10" value="errado"> Ignorar se o carro estiver funcionando <br>
+
+            <br>
+            <button type="button" onclick="checkQuiz()">Ver Resultado</button>
+        </form>
+        <p id="quiz-result"></p>
     </div>
 
     <div class="nav-buttons">
-        <button id="prev-btn" onclick="changePage(-1)" disabled>Voltar</button>
-        <button id="next-btn" onclick="changePage(1)">Avançar</button>
+        <button id="prev-btn" onclick="changePage(-1)" disabled>Anterior</button>
+        <button id="next-btn" onclick="changePage(1)">Próximo</button>
     </div>
 
     <script>
         let currentPage = 1;
-        const totalPages = 7;
+        const totalPages = 11;
 
         function changePage(direction) {
             document.getElementById(`page-${currentPage}`).classList.remove('active');
             currentPage += direction;
             document.getElementById(`page-${currentPage}`).classList.add('active');
 
-            document.getElementById('prev-btn').disabled = currentPage === 1;
-            document.getElementById('next-btn').disabled = currentPage === totalPages;
+            // Atualiza a barra de progresso
+            let progress = (currentPage / totalPages) * 100;
+            document.getElementById('progress-bar').style.width = progress + "%";
 
-            updateProgress();
+            // Atualiza botões de navegação
+            document.getElementById('prev-btn').disabled = (currentPage === 1);
+            document.getElementById('next-btn').disabled = (currentPage === totalPages);
         }
 
-        function updateProgress() {
-            let progress = ((currentPage - 1) / (totalPages - 1)) * 100;
-            document.getElementById('progress-bar').style.width = `${progress}%`;
-            document.getElementById('status-text').textContent = `Progresso: ${Math.round(progress)}%`;
+        function checkQuiz() {
+            let correct = document.querySelectorAll('input[value="certo"]:checked').length;
+            document.getElementById("quiz-result").innerText = `Você acertou ${correct} de 10 questões!`;
         }
     </script>
 
