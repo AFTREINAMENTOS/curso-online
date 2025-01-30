@@ -104,6 +104,32 @@
         <p>Texto sobre equipamentos de segurança...</p>
     </div>
 
+    <div class="content" id="page-2">
+        <h2>2. Direção Defensiva</h2>
+        <p>Texto sobre direção defensiva...</p>
+    </div>
+
+    <div class="content" id="page-3">
+        <h2>3. Revisão Diária da Moto</h2>
+        <p>Texto sobre revisão diária da moto...</p>
+    </div>
+
+    <div class="content" id="page-4">
+        <h2>4. Manutenção Preventiva</h2>
+        <p>Texto sobre manutenção preventiva...</p>
+    </div>
+
+    <div class="content" id="page-5">
+        <h2>5. Condução Econômica</h2>
+        <p>Texto sobre condução econômica...</p>
+    </div>
+
+    <div class="content" id="page-6">
+        <h2>6. Zelando pela Carga Transportada</h2>
+        <p>Texto sobre a carga transportada...</p>
+    </div>
+
+    <!-- Avaliação Final -->
     <div class="content" id="page-7">
         <h2>Avaliação Final</h2>
         <p>Responda as perguntas abaixo e veja seu resultado.</p>
@@ -112,9 +138,9 @@
             <div id="question-container"></div>
         </div>
 
-        <div class="nav-buttons" id="quiz-nav">
+        <div class="nav-buttons">
             <button id="prev-question" onclick="changeQuestion(-1)" disabled>Voltar</button>
-            <button id="next-question" onclick="changeQuestion(1)" disabled>Próxima</button>
+            <button id="next-question" onclick="changeQuestion(1)">Próxima</button>
         </div>
 
         <button id="finalizar" onclick="verificarRespostas()" style="display:none;">Finalizar Avaliação</button>
@@ -141,7 +167,15 @@
         let currentQuestion = 0;
         const questions = [
             { text: "Qual é o equipamento de segurança obrigatório?", options: ["Luvas", "Capacete"], correct: 1 },
-            { text: "Qual a distância mínima de segurança recomendada no trânsito?", options: ["1 segundo", "2 segundos"], correct: 1 }
+            { text: "Qual a distância mínima de segurança recomendada no trânsito?", options: ["1 segundo", "2 segundos"], correct: 1 },
+            { text: "Qual a velocidade máxima permitida em vias urbanas para motocicletas?", options: ["50 km/h", "60 km/h"], correct: 0 },
+            { text: "O que significa condução defensiva?", options: ["Agressividade no trânsito", "Prevenção de acidentes"], correct: 1 },
+            { text: "Quando revisar os freios da moto?", options: ["A cada 10.000 km", "Periodicamente"], correct: 1 },
+            { text: "O capacete deve estar sempre:", options: ["Ajustado corretamente", "Solto"], correct: 0 },
+            { text: "O uso de viseira ou óculos de proteção é:", options: ["Opcional", "Obrigatório"], correct: 1 },
+            { text: "O que fazer ao transportar carga?", options: ["Equilibrá-la corretamente", "Não se preocupar"], correct: 0 },
+            { text: "Qual o benefício da manutenção preventiva?", options: ["Evitar problemas mecânicos", "Apenas gastar dinheiro"], correct: 0 },
+            { text: "Ao pilotar na chuva, o que é recomendado?", options: ["Reduzir a velocidade", "Acelerar para chegar rápido"], correct: 0 }
         ];
 
         function changePage(direction) {
@@ -149,12 +183,13 @@
             currentPage += direction;
             document.getElementById(`page-${currentPage}`).classList.add('active');
 
-            document.getElementById("page-navigation").style.display = currentPage === 7 ? "none" : "flex";
+            // Ocultar ou mostrar o botão "Avançar" dependendo da página
             if (currentPage === 7) {
-                loadQuestion();
-                document.getElementById("quiz-nav").style.display = "flex";
+                document.getElementById("page-navigation").style.display = "none";
+                document.getElementById("next-btn").style.display = "none"; // Oculta o botão "Avançar"
             } else {
-                document.getElementById("quiz-nav").style.display = "none";
+                document.getElementById("page-navigation").style.display = "flex";
+                document.getElementById("next-btn").style.display = "inline-block"; // Mostra o botão "Avançar"
             }
 
             updateProgress();
@@ -168,50 +203,14 @@
 
         function loadQuestion() {
             const q = questions[currentQuestion];
-            document.getElementById("question-container").innerHTML = `
-                <p>${currentQuestion + 1}. ${q.text}</p>
-                <input type="radio" name="q${currentQuestion}" value="0" onclick="enableNext()"> ${q.options[0]}<br>
-                <input type="radio" name="q${currentQuestion}" value="1" onclick="enableNext()"> ${q.options[1]}<br>
-            `;
-
-            document.getElementById("next-question").disabled = true;
-        }
-
-        function enableNext() {
-            document.getElementById("next-question").disabled = false;
+            document.getElementById("question-container").innerHTML = `<p>${currentQuestion + 1}. ${q.text}</p>
+                <input type="radio" name="q${currentQuestion}" value="0"> ${q.options[0]}<br>
+                <input type="radio" name="q${currentQuestion}" value="1"> ${q.options[1]}<br>`;
         }
 
         function changeQuestion(dir) {
             currentQuestion += dir;
-            document.getElementById("prev-question").disabled = currentQuestion === 0;
-
-            if (currentQuestion === questions.length - 1) {
-                document.getElementById("next-question").style.display = "none";
-                document.getElementById("finalizar").style.display = "inline-block";
-            } else {
-                document.getElementById("next-question").style.display = "inline-block";
-                document.getElementById("finalizar").style.display = "none";
-            }
-
             loadQuestion();
-        }
-
-        function verificarRespostas() {
-            let totalCorreto = 0;
-
-            for (let i = 0; i < questions.length; i++) {
-                let respostas = document.getElementsByName(`q${i}`);
-                for (let resposta of respostas) {
-                    if (resposta.checked && parseInt(resposta.value) === questions[i].correct) {
-                        totalCorreto++;
-                    }
-                }
-            }
-
-            let resultado = `Você acertou ${totalCorreto} de ${questions.length}.`;
-            document.getElementById("resultado").textContent = resultado;
-
-            document.getElementById("certificado").style.display = totalCorreto >= 1 ? "block" : "none";
         }
 
         loadQuestion();
