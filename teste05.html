@@ -65,6 +65,13 @@
             transform: translateX(-50%);
             font-weight: bold;
         }
+        .quiz div {
+            margin-bottom: 10px;
+        }
+        .feedback {
+            font-weight: bold;
+            margin-top: 5px;
+        }
         #certificado {
             display: none;
             margin-top: 20px;
@@ -77,6 +84,9 @@
             text-decoration: none;
             border-radius: 5px;
             font-weight: bold;
+        }
+        #certificado a:hover {
+            background-color: #1da851;
         }
     </style>
 </head>
@@ -92,11 +102,6 @@
     <div class="content active" id="page-1">
         <h2>1. Equipamentos de Segurança</h2>
         <p>Texto sobre equipamentos de segurança...</p>
-    </div>
-
-    <div class="content" id="page-2">
-        <h2>2. Direção Defensiva</h2>
-        <p>Texto sobre direção defensiva...</p>
     </div>
 
     <div class="content" id="page-7">
@@ -144,9 +149,7 @@
             currentPage += direction;
             document.getElementById(`page-${currentPage}`).classList.add('active');
 
-            document.getElementById("prev-btn").style.display = currentPage === 7 ? "none" : "inline-block";
-            document.getElementById("next-btn").style.display = currentPage === 7 ? "none" : "inline-block";
-
+            document.getElementById("page-navigation").style.display = currentPage === 7 ? "none" : "flex";
             if (currentPage === 7) {
                 loadQuestion();
                 document.getElementById("quiz-nav").style.display = "flex";
