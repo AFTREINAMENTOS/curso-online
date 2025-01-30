@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de Condução Segura para Motofretistas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+        .header h1 {
+            margin: 0;
+        }
+        .content {
+            padding: 20px;
+            margin: 20px auto;
+            background-color: white;
+            border-radius: 8px;
+            max-width: 900px;
+            display: none;
+        }
+        .content.active {
+            display: block;
+        }
+        .content h2 {
+            color: #333;
+        }
+        .content p {
+            line-height: 1.6;
+            color: #555;
+        }
+        .content ul {
+            color: #555;
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+        .content img {
+            width: 100%;
+            max-width: 600px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+        .content strong {
+            color: #333;
+        }
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .nav-buttons button {
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .nav-buttons button:disabled {
+            background-color: #ccc;
+        }
+        .quiz {
+            margin-top: 20px;
+        }
+        .quiz label {
+            display: block;
+            margin: 10px 0;
+        }
+        .quiz button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .quiz button:disabled {
+            background-color: #ccc;
+        }
+        .result {
+            display: none;
+            padding: 20px;
+            background-color: #e1f7d5;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        .result span {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Curso de Condução Segura para Motofretistas</h1>
+    </div>
+
+    <!-- Page 1 -->
+    <div class="content active" id="page-1">
+        <h2>1. Equipamentos de Segurança</h2>
+        <img src="IMG-20250129-WA0107.jpg" alt="Equipamentos de Segurança">
+        <p>O uso correto de equipamentos de segurança é essencial para proteger a vida do motofretista, especialmente considerando os riscos envolvidos no trânsito. Vamos ver os principais:</p>
+        <ul>
+            <li><strong>Capacete com viseira:</strong> O capacete é obrigatório e deve ser de boa qualidade. A viseira ajuda a proteger os olhos contra vento, poeira e detritos, além de evitar cegueira temporária ao pegar chuva.</li>
+            <li><strong>Jaqueta com proteção:</strong> As jaquetas para moto geralmente vêm com proteções nos ombros, cotovelos e costas. Isso é essencial em caso de queda, pois minimiza os danos à pele e aos ossos.</li>
+            <li><strong>Luvas reforçadas:</strong> As luvas ajudam a evitar lesões nas mãos em caso de queda, além de garantir maior aderência ao guidão. Sempre opte por luvas que cubram os pulsos, que são vulneráveis.</li>
+            <li><strong>Botas de segurança:</strong> As botas protegem os pés e tornozelos, evitando torções e lesões sérias. Além disso, elas oferecem melhor controle sobre a moto, principalmente em frenagens.</li>
+        </ul>
+        <p><strong>Dica:</strong> Imagine um cenário onde um veículo inesperadamente corta sua frente. Caso esteja usando os equipamentos corretos, como a jaqueta e o capacete com viseira, o impacto será menos danoso.</p>
+        <!-- Quiz for page 1 -->
+        <div class="quiz" id="quiz-1">
+            <h3>Avaliação - Equipamentos de Segurança</h3>
+            <form id="quiz-form-1">
+                <label>
+                    1. O que o capacete com viseira ajuda a proteger?
+                    <input type="radio" name="question1" value="correto"> Olhos contra vento e poeira
+                    <input type="radio" name="question1" value="errado"> Somente a cabeça
+                </label>
+                <label>
+                    2. Quais áreas as jaquetas para moto geralmente protegem?
+                    <input type="radio" name="question2" value="errado"> Cabeça
+                    <input type="radio" name="question2" value="correto"> Ombros, cotovelos e costas
+                </label>
+                <button type="button" onclick="submitQuiz(1)">Enviar Respostas</button>
+            </form>
+            <div class="result" id="result-1">
+                <p><span>Resultado: </span> Você acertou <span id="correct-answers-1">0</span> de 2 perguntas!</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Additional Pages (page 2, page 3, etc.) -->
+    <!-- Page 2, 3, etc. will follow a similar structure for quiz after content -->
+
+    <div class="nav-buttons">
+        <button id="prev-btn" onclick="changePage(-1)" disabled>Voltar</button>
+        <button id="next-btn" onclick="changePage(1)">Avançar</button>
+    </div>
+
+    <script>
+        let currentPage = 1;
+        const totalPages = 6;
+
+        function changePage(direction) {
+            const prevPage = document.getElementById(`page-${currentPage}`);
+            currentPage += direction;
+            const nextPage = document.getElementById(`page-${currentPage}`);
+
+            prevPage.classList.remove('active');
+            nextPage.classList.add('active');
+
+            document.getElementById('prev-btn').disabled = currentPage === 1;
+            document.getElementById('next-btn').disabled = currentPage === totalPages;
+
+            // Hide the quiz result after page change
+            const result = document.getElementById(`result-${currentPage-1}`);
+            if (result) result.style.display = 'none';
+        }
+
+        function submitQuiz(page) {
+            let score = 0;
+            const form = document.getElementById(`quiz-form-${page}`);
+            const answers = form.querySelectorAll('input[type="radio"]:checked');
+            
+            answers.forEach(answer => {
+                if (answer.value === 'correto') score++;
+            });
+
+            // Show result
+            document.getElementById(`correct-answers-${page}`).textContent = score;
+            document.getElementById(`result-${page}`).style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
