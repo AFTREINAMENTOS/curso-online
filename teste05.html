@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de Condução Segura para Motofretistas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        .header {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+        }
+        .content {
+            padding: 20px;
+            margin: 20px auto 60px;
+            background-color: white;
+            border-radius: 8px;
+            max-width: 900px;
+            display: none;
+        }
+        .content.active {
+            display: block;
+        }
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .nav-buttons button {
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .nav-buttons button:disabled {
+            background-color: #ccc;
+        }
+        .progress-container {
+            width: 100%;
+            background-color: #ddd;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            height: 10px;
+        }
+        .progress-bar {
+            height: 10px;
+            width: 0%;
+            background-color: #007BFF;
+            transition: width 0.3s;
+        }
+        .status {
+            position: fixed;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-weight: bold;
+        }
+        .quiz div {
+            margin-bottom: 10px;
+        }
+        #certificado {
+            display: none;
+            margin-top: 20px;
+        }
+        #certificado a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #25D366;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Curso de Condução Segura para Motofretistas</h1>
+    </div>
+
+    <p class="status" id="status-text">Progresso: 0%</p>
+
+    <!-- Páginas de Conteúdo -->
+    <div class="content active" id="page-1">
+        <h2>1. Equipamentos de Segurança</h2>
+        <p>Texto sobre equipamentos de segurança...</p>
+    </div>
+
+    <div class="content" id="page-2">
+        <h2>2. Direção Defensiva</h2>
+        <p>Texto sobre direção defensiva...</p>
+    </div>
+
+    <div class="content" id="page-3">
+        <h2>3. Revisão Diária da Moto</h2>
+        <p>Texto sobre revisão diária da moto...</p>
+    </div>
+
+    <div class="content" id="page-7">
+        <h2>Avaliação Final</h2>
+        <p>Responda as perguntas abaixo e veja seu resultado.</p>
+
+        <div class="quiz">
+            <div id="question-container"></div>
+        </div>
+
+        <div class="nav-buttons">
+            <button id="prev-question" onclick="changeQuestion(-1)" disabled>Voltar</button>
+            <button id="next-question" onclick="changeQuestion(1)" disabled>Próxima</button>
+        </div>
+
+        <button id="finalizar" onclick="verificarRespostas()" style="display:none;">Finalizar Avaliação</button>
+        <p id="resultado"></p>
+
+        <div id="certificado">
+            <h3>Parabéns! Você pode solicitar seu certificado.</h3>
+            <a id="whatsapp-link" href="#" target="_blank">Solicitar pelo WhatsApp</a>
+        </div>
+    </div>
+
+    <div class="nav-buttons" id="page-navigation">
+        <button id="prev-btn" onclick="changePage(-1)" disabled>Voltar</button>
+        <button id="next-btn" onclick="changePage(1)">Avançar</button>
+    </div>
+
+    <div class="progress-container">
+        <div class="progress-bar" id="progress-bar"></div>
+    </div>
+
+    <script>
+        let currentPage = 1;
+        const totalPages = 7;
+        let currentQuestion = 0;
+        const questions = [
+            { text: "Qual é o equipamento de segurança obrigatório?", options: ["Luvas", "Capacete"], correct: 1 },
+            { text: "Qual a distância mínima de segurança recomendada no trânsito?", options: ["1 segundo", "2 segundos"], correct: 1 }
+        ];
+
+        function changePage(direction) {
+            document.getElementById(`page-${currentPage}`).classList.remove('active');
+            currentPage += direction;
+            document.getElementById(`page-${currentPage}`).classList.add('active');
+
+            // Exibir ou ocultar os botões de navegação
+            document.getElementById("prev-btn").style.display = currentPage === 7 ? "none" : "inline-block";
+            document.getElementById("next-btn").style.display = currentPage === 7 ? "none" : "inline-block";
+
+            updateProgress();
+        }
+
+        function updateProgress() {
+            let progress = ((currentPage - 1) / (totalPages - 1)) * 100;
+            document.getElementById('progress-bar').style.width = `${progress}%`;
+            document.getElementById('status-text').textContent = `Progresso: ${Math.round(progress)}%`;
+        }
+
+        function loadQuestion() {
+            const q = questions[currentQuestion];
+            document.getElementById("question-container").innerHTML = `
+                <p>${currentQuestion + 1}. ${q.text}</p>
+                <input type="radio" name="q${currentQuestion}" value="0" onclick="enableNext()"> ${q.options[0]}<br>
+                <input type="radio" name="q${currentQuestion}" value="1" onclick="enableNext()"> ${q.options[1]}<br>
+            `;
+
+            document.getElementById("next-question").disabled = true;
+        }
+
+        function enableNext() {
+            document.getElementById("next-question").disabled = false;
+        }
+
+        function changeQuestion(dir) {
+            currentQuestion += dir;
+            document.getElementById("prev-question").disabled = currentQuestion === 0;
+
+            if (currentQuestion === questions.length - 1) {
+                document.getElementById("next-question").style.display = "none";
+                document.getElementById("finalizar").style.display = "inline-block";
+            } else {
+                document.getElementById("next-question").style.display = "inline-block";
+                document.getElementById("finalizar").style.display = "none";
+            }
+
+            loadQuestion();
+        }
+
+        function verificarRespostas() {
+            let totalCorreto = 0;
+
+            for (let i = 0; i < questions.length; i++) {
+                let respostas = document.getElementsByName(`q${i}`);
+                for (let resposta of respostas) {
+                    if (resposta.checked && parseInt(resposta.value) === questions[i].correct) {
+                        totalCorreto++;
+                    }
+                }
+            }
+
+            let resultado = `Você acertou ${totalCorreto} de ${questions.length}.`;
+            document.getElementById("resultado").textContent = resultado;
+
+            document.getElementById("certificado").style.display = totalCorreto >= 1 ? "block" : "none";
+        }
+
+        loadQuestion();
+    </script>
+
+</body>
+</html>
