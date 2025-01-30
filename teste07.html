@@ -68,34 +68,6 @@
         .nav-buttons button:disabled {
             background-color: #ccc;
         }
-        .quiz {
-            margin-top: 20px;
-        }
-        .quiz label {
-            display: block;
-            margin: 10px 0;
-        }
-        .quiz button {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-        .quiz button:disabled {
-            background-color: #ccc;
-        }
-        .result {
-            display: none;
-            padding: 20px;
-            background-color: #e1f7d5;
-            border-radius: 8px;
-            margin-top: 20px;
-        }
-        .result span {
-            font-weight: bold;
-        }
     </style>
 </head>
 <body>
@@ -104,7 +76,7 @@
         <h1>Curso de Condução Segura para Motofretistas</h1>
     </div>
 
-    <!-- Page 1 -->
+    <!-- Página 1 -->
     <div class="content active" id="page-1">
         <h2>1. Equipamentos de Segurança</h2>
         <img src="IMG-20250129-WA0107.jpg" alt="Equipamentos de Segurança">
@@ -116,68 +88,71 @@
             <li><strong>Botas de segurança:</strong> As botas protegem os pés e tornozelos, evitando torções e lesões sérias. Além disso, elas oferecem melhor controle sobre a moto, principalmente em frenagens.</li>
         </ul>
         <p><strong>Dica:</strong> Imagine um cenário onde um veículo inesperadamente corta sua frente. Caso esteja usando os equipamentos corretos, como a jaqueta e o capacete com viseira, o impacto será menos danoso.</p>
-        <!-- Quiz for page 1 -->
-        <div class="quiz" id="quiz-1">
-            <h3>Avaliação - Equipamentos de Segurança</h3>
-            <form id="quiz-form-1">
-                <label>
-                    1. O que o capacete com viseira ajuda a proteger?
-                    <input type="radio" name="question1" value="correto"> Olhos contra vento e poeira
-                    <input type="radio" name="question1" value="errado"> Somente a cabeça
-                </label>
-                <label>
-                    2. Quais áreas as jaquetas para moto geralmente protegem?
-                    <input type="radio" name="question2" value="errado"> Cabeça
-                    <input type="radio" name="question2" value="correto"> Ombros, cotovelos e costas
-                </label>
-                <button type="button" onclick="submitQuiz(1)">Enviar Respostas</button>
-            </form>
-            <div class="result" id="result-1">
-                <p><span>Resultado: </span> Você acertou <span id="correct-answers-1">0</span> de 2 perguntas!</p>
-            </div>
-        </div>
     </div>
 
-    <!-- Additional Pages (page 2, page 3, etc.) -->
-    <!-- Page 2, 3, etc. will follow a similar structure for quiz after content -->
+    <!-- Página 2 -->
+    <div class="content" id="page-2">
+        <h2>2. Direção Defensiva</h2>
+        <img src="Direção_Defensiva_Moto.jpg" alt="Direção Defensiva">
+        <p>Adotar uma postura defensiva pode ser a chave para evitar acidentes. Vamos explorar algumas práticas importantes para aplicar no dia a dia:</p>
+        <ul>
+            <li><strong>Antecipe as ações dos outros motoristas:</strong> Ao trafegar pelas ruas, é fundamental ficar atento ao comportamento de outros motoristas. Observe o movimento de outros veículos e se há sinais de perigo (como a mudança de faixa sem sinalização).</li>
+            <li><strong>Evite os pontos cegos:</strong> Sempre evite posicionar sua moto nos pontos cegos dos carros. Isso é crucial para a sua visibilidade e segurança.</li>
+            <li><strong>Mantenha distância segura:</strong> Mantenha uma distância de pelo menos dois segundos do veículo à frente. Isso lhe dá tempo suficiente para reagir a qualquer imprevisto.</li>
+            <li><strong>Seja visível:</strong> Mesmo durante o dia, mantenha os faróis acesos. A visibilidade aumenta e você se torna mais fácil de ser visto pelos outros motoristas.</li>
+        </ul>
+        <p><strong>Dica:</strong> Se você está atrás de um carro e ele começa a reduzir a velocidade sem motivo aparente, mantenha uma distância maior para evitar colisões.</p>
+    </div>
+
+    <!-- Página 3 -->
+    <div class="content" id="page-3">
+        <h2>3. Mecânica Básica de Veículos Leves</h2>
+        <img src="https://example.com/revisao-moto.jpg" alt="Revisão de Moto">
+        <p>Manter a moto ou o veículo leve em bom estado não se limita à parte externa. Aqui estão alguns cuidados fundamentais com a mecânica do seu veículo:</p>
+        <ul>
+            <li><strong>Troca de óleo:</strong> O óleo do motor deve ser trocado regularmente, conforme o manual do proprietário. Isso garante a lubrificação adequada das peças internas e impede o superaquecimento do motor.</li>
+            <li><strong>Sistema de transmissão:</strong> Verifique o sistema de transmissão periodicamente. Isso inclui a corrente, a embreagem e o câmbio. Com o tempo, a transmissão pode sofrer desgaste, comprometendo a troca de marchas e a performance da moto.</li>
+            <li><strong>Pneus:</strong> A manutenção dos pneus é essencial para garantir aderência e segurança. Verifique regularmente a pressão, o alinhamento e o desgaste dos pneus. Pneus mal calibrados podem comprometer a dirigibilidade e aumentar o consumo de combustível.</li>
+            <li><strong>Filtros de ar e combustível:</strong> Os filtros são responsáveis por manter o motor funcionando de maneira eficiente. Filtros sujos podem reduzir o desempenho do motor e até prejudicar outros componentes.</li>
+        </ul>
+        <p><strong>Dica:</strong> Realizar a troca de óleo dentro dos prazos estabelecidos é fundamental para garantir que o motor trabalhe de forma suave e eficiente.</p>
+    </div>
+
+    <!-- Página 4 -->
+    <div class="content" id="page-4">
+        <h2>4. Manutenção Preventiva</h2>
+        <img src="https://example.com/manutencao-preventiva.jpg" alt="Manutenção Preventiva">
+        <p>Manter a moto em boas condições evita gastos extras com reparos e aumenta sua segurança ao longo do tempo. Confira as principais manutenções preventivas:</p>
+        <ul>
+            <li><strong>Troca de óleo:</strong> A troca de óleo deve ser feita a cada intervalo recomendado pelo fabricante. O óleo sujo prejudica a lubrificação do motor, resultando em maior desgaste e superaquecimento.</li>
+            <li><strong>Lubrificação da corrente:</strong> A corrente deve ser lubrificada regularmente para evitar desgastes e quebras. Idealmente, a cada 500 km ou quando perceber que a corrente está seca.</li>
+            <li><strong>Troca de pneus:</strong> Quando o pneu atingir a profundidade mínima de sulco (geralmente 1mm), deve ser trocado. Pneus desgastados comprometem a estabilidade e segurança da pilotagem.</li>
+            <li><strong>Alinhamento e balanceamento:</strong> Fazer alinhamento e balanceamento dos pneus regularmente melhora a estabilidade da moto e evita desgaste irregular nos pneus.</li>
+        </ul>
+        <p><strong>Dica:</strong> Uma troca de óleo negligenciada pode fazer o motor superaquecer e até mesmo quebrar. Por isso, a manutenção preventiva é essencial.</p>
+    </div>
 
     <div class="nav-buttons">
-        <button id="prev-btn" onclick="changePage(-1)" disabled>Voltar</button>
-        <button id="next-btn" onclick="changePage(1)">Avançar</button>
+        <button id="prev-btn" onclick="changePage(-1)" disabled>Corrigir</button>
+        <button id="next-btn" onclick="changePage(1)">Responder</button>
     </div>
 
     <script>
         let currentPage = 1;
-        const totalPages = 6;
+        const totalPages = 6; // Número total de páginas
 
         function changePage(direction) {
             const prevPage = document.getElementById(`page-${currentPage}`);
             currentPage += direction;
             const nextPage = document.getElementById(`page-${currentPage}`);
 
+            // Mantenha o conteúdo ativo
             prevPage.classList.remove('active');
             nextPage.classList.add('active');
 
+            // Controle dos botões
             document.getElementById('prev-btn').disabled = currentPage === 1;
             document.getElementById('next-btn').disabled = currentPage === totalPages;
-
-            // Hide the quiz result after page change
-            const result = document.getElementById(`result-${currentPage-1}`);
-            if (result) result.style.display = 'none';
-        }
-
-        function submitQuiz(page) {
-            let score = 0;
-            const form = document.getElementById(`quiz-form-${page}`);
-            const answers = form.querySelectorAll('input[type="radio"]:checked');
-            
-            answers.forEach(answer => {
-                if (answer.value === 'correto') score++;
-            });
-
-            // Show result
-            document.getElementById(`correct-answers-${page}`).textContent = score;
-            document.getElementById(`result-${page}`).style.display = 'block';
         }
     </script>
 
