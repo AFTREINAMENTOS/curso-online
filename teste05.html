@@ -102,11 +102,6 @@
         <p>Texto sobre direção defensiva...</p>
     </div>
 
-    <div class="content" id="page-3">
-        <h2>3. Revisão Diária da Moto</h2>
-        <p>Texto sobre revisão diária da moto...</p>
-    </div>
-
     <div class="content" id="page-7">
         <h2>Avaliação Final</h2>
         <p>Responda as perguntas abaixo e veja seu resultado.</p>
@@ -115,7 +110,7 @@
             <div id="question-container"></div>
         </div>
 
-        <div class="nav-buttons">
+        <div class="nav-buttons" id="quiz-nav">
             <button id="prev-question" onclick="changeQuestion(-1)" disabled>Voltar</button>
             <button id="next-question" onclick="changeQuestion(1)" disabled>Próxima</button>
         </div>
@@ -152,9 +147,15 @@
             currentPage += direction;
             document.getElementById(`page-${currentPage}`).classList.add('active');
 
-            // Exibir ou ocultar os botões de navegação
             document.getElementById("prev-btn").style.display = currentPage === 7 ? "none" : "inline-block";
             document.getElementById("next-btn").style.display = currentPage === 7 ? "none" : "inline-block";
+
+            if (currentPage === 7) {
+                loadQuestion();
+                document.getElementById("quiz-nav").style.display = "flex";
+            } else {
+                document.getElementById("quiz-nav").style.display = "none";
+            }
 
             updateProgress();
         }
