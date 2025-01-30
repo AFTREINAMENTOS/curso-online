@@ -37,9 +37,6 @@
         .content.active {
             display: block;
         }
-        .content h2 {
-            color: #333;
-        }
         .nav-buttons {
             display: flex;
             justify-content: space-between;
@@ -64,16 +61,6 @@
             color: white;
             margin-top: 20px;
         }
-        .question {
-            display: none;
-        }
-        .question.active {
-            display: block;
-        }
-        .feedback {
-            margin-top: 10px;
-            font-weight: bold;
-        }
     </style>
 </head>
 <body>
@@ -86,53 +73,86 @@
         <div class="progress-bar" id="progress-bar"></div>
     </div>
 
-    <!-- Última página com avaliação -->
+    <div class="content active" id="page-1">
+        <h2>1. Introdução à Mecânica Básica</h2>
+        <p>Este curso ajudará mulheres a entenderem o funcionamento dos veículos e realizarem manutenções básicas.</p>
+    </div>
+
+    <div class="content" id="page-2">
+        <h2>2. O Motor e Seus Componentes</h2>
+        <p>O motor transforma combustível em energia. Componentes principais:</p>
+        <ul>
+            <li>Bloco do motor</li>
+            <li>Pistões</li>
+            <li>Velas de ignição</li>
+        </ul>
+    </div>
+
+    <div class="content" id="page-3">
+        <h2>3. Sistema de Transmissão</h2>
+        <p>O sistema de transmissão leva a força do motor para as rodas.</p>
+    </div>
+
+    <div class="content" id="page-4">
+        <h2>4. Freios e Segurança</h2>
+        <p>Manutenção dos freios é essencial para a segurança do veículo.</p>
+    </div>
+
+    <div class="content" id="page-5">
+        <h2>5. Suspensão e Pneus</h2>
+        <p>A suspensão mantém a estabilidade do carro. Cuide dos pneus para garantir segurança.</p>
+    </div>
+
+    <div class="content" id="page-6">
+        <h2>6. Sistema Elétrico e Bateria</h2>
+        <p>O sistema elétrico inclui alternador, bateria e fusíveis.</p>
+    </div>
+
+    <div class="content" id="page-7">
+        <h2>7. Manutenção Preventiva</h2>
+        <p>Verifique regularmente óleo, filtros e fluido de freio.</p>
+    </div>
+
+    <div class="content" id="page-8">
+        <h2>8. Emergências e Soluções Rápidas</h2>
+        <p>Saiba como agir em caso de pane elétrica ou pneu furado.</p>
+    </div>
+
     <div class="content" id="page-9">
+        <h2>9. Fluidos Essenciais do Veículo</h2>
+        <p>Confira e troque os seguintes fluidos regularmente:</p>
+        <ul>
+            <li>Óleo do motor</li>
+            <li>Água do radiador</li>
+            <li>Fluido de freio</li>
+        </ul>
+    </div>
+
+    <div class="content" id="page-10">
+        <h2>10. Checklist para Longas Viagens</h2>
+        <p>Antes de uma viagem, verifique:</p>
+        <ul>
+            <li>Pneus calibrados</li>
+            <li>Nível de óleo e água</li>
+            <li>Freios funcionando corretamente</li>
+        </ul>
+    </div>
+
+    <div class="content" id="page-11">
         <h2>Avaliação Final</h2>
-        <div id="quiz">
-            <div class="question active" id="q1">
-                <p>1. Qual a principal função do motor?</p>
-                <input type="radio" name="q1" value="errado" onclick="showFeedback('q1', false)"> Acelerar o carro <br>
-                <input type="radio" name="q1" value="certo" onclick="showFeedback('q1', true)"> Transformar combustível em energia <br>
-                <p class="feedback" id="fb-q1"></p>
-            </div>
+        <form id="quiz-form">
+            <p>1. Qual a principal função do motor?</p>
+            <input type="radio" name="q1" value="certo"> Transformar combustível em energia <br>
+            <input type="radio" name="q1" value="errado"> Apenas manter o carro ligado <br>
 
-            <div class="question" id="q2">
-                <p>2. O que indica a necessidade de troca de pastilhas de freio?</p>
-                <input type="radio" name="q2" value="certo" onclick="showFeedback('q2', true)"> Ruído metálico ao frear <br>
-                <input type="radio" name="q2" value="errado" onclick="showFeedback('q2', false)"> Volante tremendo <br>
-                <p class="feedback" id="fb-q2"></p>
-            </div>
+            <p>2. O que indica a necessidade de troca de pastilhas de freio?</p>
+            <input type="radio" name="q2" value="certo"> Ruído metálico ao frear <br>
+            <input type="radio" name="q2" value="errado"> Luz de seta piscando rápido <br>
 
-            <div class="question" id="q3">
-                <p>3. Qual item faz parte do sistema elétrico?</p>
-                <input type="radio" name="q3" value="errado" onclick="showFeedback('q3', false)"> Pistão <br>
-                <input type="radio" name="q3" value="certo" onclick="showFeedback('q3', true)"> Alternador <br>
-                <p class="feedback" id="fb-q3"></p>
-            </div>
-
-            <div class="question" id="q4">
-                <p>4. O que acontece se a correia dentada quebrar?</p>
-                <input type="radio" name="q4" value="errado" onclick="showFeedback('q4', false)"> O carro gasta mais combustível <br>
-                <input type="radio" name="q4" value="certo" onclick="showFeedback('q4', true)"> O motor pode ser danificado <br>
-                <p class="feedback" id="fb-q4"></p>
-            </div>
-
-            <div class="question" id="q5">
-                <p>5. Como saber se a bateria está fraca?</p>
-                <input type="radio" name="q5" value="errado" onclick="showFeedback('q5', false)"> Pneus murchos <br>
-                <input type="radio" name="q5" value="certo" onclick="showFeedback('q5', true)"> Dificuldade para ligar o carro <br>
-                <p class="feedback" id="fb-q5"></p>
-            </div>
-
-            <div class="nav-buttons">
-                <button id="prev-q-btn" onclick="changeQuestion(-1)" disabled>Anterior</button>
-                <button id="next-q-btn" onclick="changeQuestion(1)">Próximo</button>
-            </div>
-
-            <button id="finalizar-btn" onclick="finalizarQuiz()" style="display: none;">Finalizar Avaliação</button>
-            <p id="quiz-result"></p>
-        </div>
+            <br>
+            <button type="button" onclick="checkQuiz()">Ver Resultado</button>
+        </form>
+        <p id="quiz-result"></p>
     </div>
 
     <div class="nav-buttons">
@@ -141,7 +161,7 @@
     </div>
 
     <div class="footer">
-        Progresso: <span id="progress-text">1 / 9</span>
+        Progresso: <span id="progress-text">1 / 11</span>
     </div>
 
     <script>
@@ -151,31 +171,17 @@
             currentPage += direction;
             document.getElementById(`page-${currentPage}`).classList.add('active');
 
-            let progress = (currentPage / 9) * 100;
+            let progress = (currentPage / 11) * 100;
             document.getElementById('progress-bar').style.width = progress + "%";
-            document.getElementById('progress-text').innerText = `${currentPage} / 9`;
+            document.getElementById('progress-text').innerText = `${currentPage} / 11`;
 
             document.getElementById("prev-btn").disabled = (currentPage === 1);
-            document.getElementById("next-btn").disabled = (currentPage === 9);
+            document.getElementById("next-btn").disabled = (currentPage === 11);
         }
 
-        let currentQuestion = 1;
-        function changeQuestion(direction) {
-            document.getElementById(`q${currentQuestion}`).classList.remove('active');
-            currentQuestion += direction;
-            document.getElementById(`q${currentQuestion}`).classList.add('active');
-
-            document.getElementById("prev-q-btn").disabled = (currentQuestion === 1);
-            document.getElementById("next-q-btn").style.display = (currentQuestion < 5) ? "inline-block" : "none";
-            document.getElementById("finalizar-btn").style.display = (currentQuestion === 5) ? "inline-block" : "none";
-        }
-
-        function showFeedback(question, correct) {
-            document.getElementById(`fb-${question}`).innerText = correct ? "✔ Resposta correta!" : "❌ Resposta incorreta.";
-        }
-
-        function finalizarQuiz() {
-            alert("Avaliação finalizada! Verifique suas respostas.");
+        function checkQuiz() {
+            let correct = document.querySelectorAll('input[value="certo"]:checked').length;
+            document.getElementById("quiz-result").innerText = `Você acertou ${correct} de 2 questões!`;
         }
     </script>
 
