@@ -166,6 +166,7 @@
         const totalPages = 7;
         let currentQuestion = 0;
         let answered = false; // Flag to check if question is answered
+        let correctAnswers = 0; // Count correct answers
         const questions = [
             { text: "Qual é o equipamento de segurança obrigatório?", options: ["Luvas", "Capacete"], correct: 1 },
             { text: "Qual a distância mínima de segurança recomendada no trânsito?", options: ["1 segundo", "2 segundos"], correct: 1 },
@@ -223,13 +224,25 @@
             if (isCorrect) {
                 feedback.textContent = "Resposta correta!";
                 feedback.style.color = "green";
+                correctAnswers++;
             } else {
                 feedback.textContent = "Resposta incorreta!";
                 feedback.style.color = "red";
             }
 
             answered = true; // Marca a questão como respondida
-            document.getElementById("next-question").disabled = false; // Habilita o botão "Próxima"
+
+            // Oculta o botão "Próxima" e vai para a próxima após 2 segundos
+            setTimeout(() => {
+                document.getElementById("next-question").disabled = false; // Habilita o botão "Próxima"
+                if (currentQuestion === questions.length - 1) {
+                    showFinalResults();
+                } else {
+                    currentQuestion++;
+                    loadQuestion();
+                }
+            }, 2000);
+
             return true;
         }
 
@@ -239,6 +252,14 @@
                 loadQuestion();
             } else {
                 checkAnswer();
+            }
+        }
+
+        function showFinalResults() {
+            const score = (correctAnswers / questions.length) * 100;
+            document.getElementById("resultado").textContent = `Você acertou ${correctAnswers} de ${questions.length} questões (${score}%)`;
+            if (score >= 50) {
+                document.getElementById("certificado").style.display = "block";
             }
         }
 
