@@ -183,14 +183,9 @@
             currentPage += direction;
             document.getElementById(`page-${currentPage}`).classList.add('active');
 
-            // Ocultar ou mostrar o botão "Avançar" dependendo da página
-            if (currentPage === 7) {
-                document.getElementById("page-navigation").style.display = "none";
-                document.getElementById("next-btn").style.display = "none"; // Oculta o botão "Avançar"
-            } else {
-                document.getElementById("page-navigation").style.display = "flex";
-                document.getElementById("next-btn").style.display = "inline-block"; // Mostra o botão "Avançar"
-            }
+            // Atualiza a visibilidade dos botões "Voltar" e "Avançar"
+            document.getElementById("prev-btn").disabled = currentPage === 1;
+            document.getElementById("next-btn").disabled = currentPage === totalPages;
 
             updateProgress();
         }
@@ -206,6 +201,10 @@
             document.getElementById("question-container").innerHTML = `<p>${currentQuestion + 1}. ${q.text}</p>
                 <input type="radio" name="q${currentQuestion}" value="0"> ${q.options[0]}<br>
                 <input type="radio" name="q${currentQuestion}" value="1"> ${q.options[1]}<br>`;
+            
+            // Atualiza os botões de navegação da questão
+            document.getElementById("prev-question").disabled = currentQuestion === 0;
+            document.getElementById("next-question").disabled = currentQuestion === questions.length - 1;
         }
 
         function changeQuestion(dir) {
