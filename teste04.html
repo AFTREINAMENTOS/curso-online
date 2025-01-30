@@ -135,7 +135,6 @@
         <p>Responda as perguntas abaixo e veja seu resultado.</p>
 
         <div class="quiz">
-            <!-- 10 perguntas -->
             <div id="question-container"></div>
         </div>
 
@@ -153,7 +152,7 @@
         </div>
     </div>
 
-    <div class="nav-buttons">
+    <div class="nav-buttons" id="page-navigation">
         <button id="prev-btn" onclick="changePage(-1)" disabled>Voltar</button>
         <button id="next-btn" onclick="changePage(1)">Avançar</button>
     </div>
@@ -183,6 +182,9 @@
             document.getElementById(`page-${currentPage}`).classList.remove('active');
             currentPage += direction;
             document.getElementById(`page-${currentPage}`).classList.add('active');
+
+            document.getElementById("page-navigation").style.display = currentPage === 7 ? "none" : "flex";
+
             updateProgress();
         }
 
@@ -194,11 +196,9 @@
 
         function loadQuestion() {
             const q = questions[currentQuestion];
-            document.getElementById("question-container").innerHTML = `
-                <p>${currentQuestion + 1}. ${q.text}</p>
+            document.getElementById("question-container").innerHTML = `<p>${currentQuestion + 1}. ${q.text}</p>
                 <input type="radio" name="q${currentQuestion}" value="0"> ${q.options[0]}<br>
-                <input type="radio" name="q${currentQuestion}" value="1"> ${q.options[1]}<br>
-            `;
+                <input type="radio" name="q${currentQuestion}" value="1"> ${q.options[1]}<br>`;
         }
 
         function changeQuestion(dir) {
